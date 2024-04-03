@@ -60,6 +60,31 @@ node server.js
 
 Votre serveur doit maintenant être opérationnel et accessible via `http://localhost:3000`.
 
+### Étape 6 : Décrire les méthodes + routes dans le categorieRoutes.js et cherchez les implémentations dans categorieController.js 
+
+![image](https://github.com/hrhouma/Projet-MERN/assets/10111526/23ce53ac-99e4-4ae0-8a48-afbca457cbd3)
+
+```bash
+var cors = require('cors')
+
+module.exports = function(app) {
+
+    var categorie = require('../controllers/categorieController');
+  app.use(cors())
+
+    // categorie Routes
+    app.route('/categorie')
+      .get(categorie.list_all_categorie)
+      .post(categorie.create_a_categorie);
+  
+  
+    app.route('/categorie/:categorieId')
+      .get(categorie.read_a_categorie)
+      .put(categorie.update_a_categorie)
+      .delete(categorie.delete_a_categorie);
+  };
+```
+
 ## Architecture du projet
 
 Prenez le temps de comprendre l'architecture du projet :

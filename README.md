@@ -83,6 +83,7 @@ Pour vérifier que la base de données a été créée et est accessible, vous p
 3. Explorez comment les routes sont définies et traitées.
 4. Regardez comment les modèles de données sont définis avec Mongoose.
 5. Ajoutez des commentaires aux parties du code que vous trouvez complexes ou intéressantes.
+6. Dessiner un diagramme qui illustre comment l'architecture complète de l'application (QUI APPELLE QUI ?)
 
 
 

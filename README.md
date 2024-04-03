@@ -1,7 +1,4 @@
-D'accord, voici un exemple de contenu `README.md` que vous pourriez utiliser pour guider vos étudiants à travers l'installation et la compréhension de l'architecture de votre projet MEAN. Veuillez noter que vous devrez peut-être ajuster les chemins et les commandes selon votre environnement spécifique et la configuration de votre système.
-
-```markdown
-# Guide de démarrage du projet MEAN
+# Partie 1 - Guide de démarrage du projet MEAN
 
 Ce fichier `README.md` fournit des instructions étape par étape pour configurer, exécuter le projet MEAN et comprendre son architecture.
 

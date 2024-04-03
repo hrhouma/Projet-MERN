@@ -103,7 +103,7 @@ Prenez le temps de comprendre l'architecture du projet :
 
 Pour vérifier que la base de données a été créée et est accessible, vous pouvez utiliser l'interface de ligne de commande de MongoDB ou des outils comme MongoDB Compass.
 
-## Tâches pour les étudiants
+## Question # 1
 
 1. Examinez le code source et familiarisez-vous avec la structure du projet.
 2. Identifiez les points d'entrée de l'application (e.g., `server.js`).

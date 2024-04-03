@@ -1,5 +1,5 @@
-# net start MOMGODB
-# net stop MOMGODB
+# net start MONGODB
+# net stop MONGODB
 
 Voici un résumé des commandes `net` associées à la gestion des services et des ressources réseau :
 

@@ -134,10 +134,10 @@ backendmean/
 3. Pour les requêtes POST, ajoutez l'en-tête `Content-Type: application/json` et incluez le corps de la requête au format JSON dans la section `body`.
 4. Envoyez la requête et observez la réponse.
 
-## Évaluation
+## QUESTION #2
 
 1 - Après avoir exécuté chaque opération CRUD, documentez les résultats et votre compréhension de la manière dont l'application traite chaque requête.
-2 - 
+2 - Dessiner un diagramme qui illustre comment l'architecture complète de l'application (QUI APPELLE QUI ?) depuis l'appel  GET http://localhost:3000/categorie/
 ```
 
 - Assurez-vous de remplacer `http://localhost:3000` par l'URL et le port réels si votre application s'exécute différemment.

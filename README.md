@@ -60,7 +60,7 @@ node server.js
 
 Votre serveur doit maintenant être opérationnel et accessible via `http://localhost:3000`.
 
-### Étape 6 : Décrire les routes disponibles dans categorieRoutes.js (Les implémentations se trouvent dans categorieController.js - dossier controller)
+### Étape 6 : Décrire les routes disponibles dans categorieRoutes.js - dossier routes (Les implémentations se trouvent dans categorieController.js - dossier controller)
 
 ![image](https://github.com/hrhouma/Projet-MERN/assets/10111526/4b7e5e7b-5700-4c93-9af1-4facbe51b5d6)
 

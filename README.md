@@ -136,10 +136,10 @@ backendmean/
 
 ## QUESTION #2
 
-1 - Après avoir exécuté chaque opération CRUD, documentez les résultats et votre compréhension de la manière dont l'application traite chaque requête.
-2 - Dessiner un diagramme qui illustre comment l'architecture complète de l'application (QUI APPELLE QUI ?) depuis l'appel  GET http://localhost:3000/categorie/
-```
+- 1 - Après avoir exécuté chaque opération CRUD, documentez les résultats et votre compréhension de la manière dont l'application traite chaque requête.
+- 2 - Dessiner un diagramme qui illustre comment l'architecture complète de l'application (QUI APPELLE QUI ?) depuis l'appel  GET http://localhost:3000/categorie/
 
+## Remarques
 - Assurez-vous de remplacer `http://localhost:3000` par l'URL et le port réels si votre application s'exécute différemment.
 - Écrire vos observations et posez des questions si vous rencontrez des difficultés ou des comportements inattendus.
 

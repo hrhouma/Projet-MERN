@@ -1,9 +1,9 @@
 
 # Structure de Projet MEAN
 
-Ce fichier `README.md` décrit la structure de base du projet MEAN utilisé comme laboratoire pour les étudiants.
+Ce fichier `README.md` décrit la structure de base du projet MEAN utilisé comme base pour notre laboratoire # 1.
 
-## Arborescence du projet
+## Rapprel de l'Arborescence de votre projet
 
 ```plaintext
 backendmean/
@@ -43,4 +43,8 @@ backendmean/
 
 ## Utilisation
 
-Pour commencer à utiliser ce projet, les étudiants doivent installer les dépendances avec `npm install` et démarrer le serveur avec `npm start`. Assurez-vous que MongoDB est installé et en cours d'exécution sur votre système pour que l'application puisse se connecter à la base de données.
+- Pour commencer à utiliser ce projet, installez les dépendances avec `npm install` et démarrer le serveur avec `npm start`. 
+- Assurez-vous que MongoDB est installé et en cours d'exécution sur votre système pour que l'application puisse se connecter à la base de données.
+
+![image](https://github.com/hrhouma/Projet-MERN/assets/10111526/946799d2-f740-48df-8ed2-ede7293901be)
+

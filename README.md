@@ -86,8 +86,9 @@ Pour vérifier que la base de données a été créée et est accessible, vous p
 
 
 
-
 - Ce `README` contient les étapes de base pour installer MongoDB, démarrer le serveur, et comprendre l'organisation du code source dans le cadre de votre projet MEAN.
 - Il faut explorer et commenter le code pour renforcer leur compréhension.
 
-Maintenant passez à la branche # 2 !
+# Étapes suivantes  : 
+1 - Faites l'exercice 1
+2 - Passez à la branche # 2 !

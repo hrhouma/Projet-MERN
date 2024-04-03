@@ -25,10 +25,10 @@ Après l'installation, assurez-vous que le service MongoDB est démarré. Voici 
 sudo service mongod start
 ```
 
-Pour vérifier l'état de MongoDB :
+Pour windows : 
 
 ```bash
-sudo service mongod status
+net start MONGODB
 ```
 
 ### Étape 3: Cloner le projet

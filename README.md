@@ -90,5 +90,5 @@ Pour vérifier que la base de données a été créée et est accessible, vous p
 - Il faut explorer et commenter le code pour renforcer leur compréhension.
 
 # Étapes suivantes  : 
-1 - Faites les exercices 1 et 2
+1 - Faites les exercices 1 et 2 
 2 - Passez à la branche # 2 !

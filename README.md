@@ -84,7 +84,10 @@ Pour vérifier que la base de données a été créée et est accessible, vous p
 4. Regardez comment les modèles de données sont définis avec Mongoose.
 5. Ajoutez des commentaires aux parties du code que vous trouvez complexes ou intéressantes.
 
-Bon apprentissage !
-```
 
-Ce `README` contient les étapes de base pour installer MongoDB, démarrer le serveur, et comprendre l'organisation du code source dans le cadre de votre projet MEAN. Il invite également les étudiants à explorer et à commenter le code pour renforcer leur compréhension.
+
+
+- Ce `README` contient les étapes de base pour installer MongoDB, démarrer le serveur, et comprendre l'organisation du code source dans le cadre de votre projet MEAN.
+- Il faut explorer et commenter le code pour renforcer leur compréhension.
+
+Maintenant passez à la branche # 2 !

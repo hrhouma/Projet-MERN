@@ -70,7 +70,7 @@ Prenez le temps de comprendre l'architecture du projet :
 - `node_modules` : Dossier contenant toutes les librairies et dépendances du projet.
 - `package.json` : Fichier de configuration de npm listant les dépendances et les scripts.
 - `server.js` : Point d'entrée principal du serveur Node.js.
-- `swaggerConfig.js` : Configuration pour la documentation API Swagger.
+- `swaggerConfig.js` : Configuration pour la documentation API Swagger (À ajouter à l'étape #2 !!) .
 
 ## Vérification de la base de données
 

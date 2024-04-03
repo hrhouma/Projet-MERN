@@ -87,6 +87,34 @@ module.exports = function(app) {
   };
 ```
 
+## Explication 
+
+On a deux routes dans ce code, et chacune permet d'effectuer différentes actions (GET, POST, PUT, DELETE) sur des "catégories". 
+- Voici un résumé  :
+
+1. **Activation de CORS :** `var cors = require('cors')` et `app.use(cors())` permettent à votre serveur d'accepter les requêtes provenant de n'importe où sur internet, rendant votre API accessible à des sites web qui sont hébergés sur d'autres domaines.
+
+2. **Route `/categorie` :** 
+   - **GET :** Permet de récupérer la liste de toutes les catégories existantes.
+   - **POST :** Permet de créer une nouvelle catégorie.
+
+3. **Route `/categorie/:categorieId` :**
+   - **GET :** Permet de récupérer les détails d'une catégorie spécifique, en utilisant son identifiant unique (`categorieId`).
+   - **PUT :** Permet de mettre à jour une catégorie existante, également via son identifiant.
+   - **DELETE :** Permet de supprimer une catégorie spécifique.
+
+- En gros, vous avez une route pour travailler avec l'ensemble des catégories (`/categorie`) et une autre pour interagir avec des catégories spécifiques (`/categorie/:categorieId`). 
+- Ces routes vous permettent de gérer (créer, lire, mettre à jour, supprimer) les catégories dans votre base de données ou votre système de stockage.
+
+## Résumé des routes
+Les routes sont :
+
+- **GET /categorie :** Liste toutes les catégories.
+- **POST /categorie :** Crée une nouvelle catégorie.
+- **GET /categorie/:categorieId :** Obtient une catégorie spécifique par son ID.
+- **PUT /categorie/:categorieId :** Met à jour une catégorie spécifique par son ID.
+- **DELETE /categorie/:categorieId :** Supprime une catégorie spécifique par son ID.
+
 ## Architecture du projet
 
 Prenez le temps de comprendre l'architecture du projet :

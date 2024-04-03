@@ -36,3 +36,57 @@
 **Livraison :** Vous devez fournir le code ajouté dans `categorieRoutes.js` pour la nouvelle route DELETE, ainsi que l'implémentation de la fonction `delete_all_categories` dans `categorieController.js`.
 
 Cette approche vous guide à travers le processus de développement d'une nouvelle fonctionnalité d'API en deux étapes claires, commençant par la définition de la route et suivie par l'implémentation de la logique de contrôleur correspondante.
+
+---
+# Correction de l'exercice #2
+
+Pour compléter l'exercice de suppression de toutes les catégories avec une unique requête HTTP DELETE, suivez les étapes de correction ci-dessous :
+
+### Étape 1 : Ajout de la Route dans `categorieRoutes.js`
+
+1. **Localisez le fichier de route :** Ouvrez le fichier `categorieRoutes.js` situé dans le dossier `routes` de votre projet.
+
+2. **Ajoutez la nouvelle route :** Ajoutez une route pour gérer les requêtes DELETE à l'endpoint `/categories`. Cette route appellera la fonction `delete_all_categories` du contrôleur `categorieController`. Insérez le code suivant :
+
+    ```javascript
+    app.route('/categories')
+        .delete(categorie.delete_all_categories);
+    ```
+
+### Étape 2 : Implémentation de la Fonction `delete_all_categories` dans `categorieController.js`
+
+1. **Ouvrez le fichier du contrôleur :** Rendez-vous dans le fichier `categorieController.js` situé dans le dossier `controllers`.
+
+2. **Ajoutez la fonction `delete_all_categories` :** Implémentez la fonction qui gère la suppression de toutes les catégories. Utilisez le modèle `Categorie` pour appeler `deleteMany` avec un objet de critères vide `{}` pour indiquer que toutes les entrées doivent être supprimées. Voici le code complet :
+
+    ```javascript
+    // Dans categorieController.js
+    exports.delete_all_categories = function(req, res) {
+        Categorie.deleteMany({}, function(err) {
+            if (err) {
+                // Si une erreur survient, renvoyez un code 500 avec le message d'erreur
+                res.status(500).send(err);
+            } else {
+                // Si la suppression réussit, renvoyez un code 200 avec un message de confirmation
+                res.status(200).send({ message: 'Toutes les catégories ont été supprimées.' });
+            }
+        });
+    };
+    ```
+
+### Étape 3 : Testez Votre Route
+
+Après avoir ajouté la route et implémenté la fonction dans le contrôleur, il est crucial de tester la nouvelle fonctionnalité pour s'assurer qu'elle fonctionne correctement.
+
+- Utilisez un outil de test d'API comme Postman ou utilisez cURL pour envoyer une requête DELETE à l'endpoint `/categories`.
+- Vérifiez la réponse reçue et confirmez que toutes les catégories ont été supprimées de votre base de données.
+
+### Exemple de requête cURL pour tester :
+
+```bash
+curl -X DELETE http://localhost:3000/categories
+```
+
+Remplacez `http://localhost:3000` par l'URL de base de votre API si elle est différente.
+
+En suivant ces étapes, vous aurez ajouté une fonctionnalité à votre API permettant de supprimer toutes les catégories en une seule requête, complétant ainsi l'exercice proposé.

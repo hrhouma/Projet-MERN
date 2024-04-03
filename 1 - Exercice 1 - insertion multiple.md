@@ -34,6 +34,6 @@ module.exports = function(app) {
 
 **Conseil :** Utilisez des méthodes de votre choix pour insérer plusieurs documents en une seule opération dans la base de données. Assurez-vous de gérer correctement les erreurs et de renvoyer une réponse appropriée au client.
 
-### Question pour l'exercice :
+# Question pour l'exercice :
 
 En vous basant sur le code de base fourni et les instructions ci-dessus, comment ajouteriez-vous la route pour l'insertion multiple et comment implémenteriez-vous la fonction `create_many_categories` dans le `categorieController` pour gérer cette opération ?

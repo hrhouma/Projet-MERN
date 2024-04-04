@@ -1,11 +1,11 @@
-## Exercice d'intégration de Swagger dans votre projet Node.js
+## Exercice #3 - Intégration de Swagger dans votre projet Node.js
 
 ### Objectif :
-Intégrez Swagger dans votre application Node.js pour générer une documentation interactive de votre API. Cela facilitera la compréhension, le test et l'utilisation de l'API par les développeurs.
+Intégrez Swagger dans votre application Node.js pour générer une documentation interactive de votre API. Cela facilitera la compréhension, le test et l'utilisation de l'API par les autres développeurs.
 
 ---
 
-### 2- CORRECTION DÉTAILLÉE DE SWAGGER (EXERCICE 7)
+### 2- CORRECTION DÉTAILLÉE DE SWAGGER 
 
 #### 1. Installation des Dépendances
 Pour commencer, installez les paquets nécessaires à l'aide de npm :

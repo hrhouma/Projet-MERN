@@ -153,4 +153,31 @@ Pour vérifier que la base de données a été créée et est accessible, vous p
 ▶️ 2 - Suite Exercise 2 - suppression multiple.md
 ▶️ 3 - Exercice 3 - Ajout de Swagger.md
 ▶️ 4 - Passez à la branche # 2 !
+
+# Étapes suivantes
+
+Bienvenue dans la section des étapes suivantes de notre projet. Veuillez suivre les instructions données dans chaque fichier Markdown pour progresser de manière fluide dans les exercices.
+
+## Exercices d'Insertion Multiple
+
+- **Exercice 1 : Insertion Multiple**
+  - [Exercice 1 - Insertion multiple.md](Exercice%201%20-%20insertion%20multiple.md)
+  - [Suite Exercice 1 - Insertion multiple.md](Suite%20Exercice%201%20-%20insertion%20multiple.md)
+
+## Exercices de Suppression Multiple
+
+- **Exercice 2 : Suppression Multiple**
+  - [Exercice 2 - Suppression multiple.md](Exercice%202%20-%20suppression%20multiple.md)
+  - [Suite Exercice 2 - Suppression multiple.md](Suite%20Exercice%202%20-%20suppression%20multiple.md)
+
+## Ajout de Swagger
+
+- **Exercice 3 : Ajout de Swagger**
+  - [Exercice 3 - Ajout de Swagger.md](Exercice%203%20-%20Ajout%20de%20Swagger.md)
+
+## Passage à la Branche Suivante
+
+- **Exercice 4 : Passage à la Branche #2**
+  - [Passez à la branche #2 !](Passez%20à%20la%20branche%20%232%20!.md)
+
      

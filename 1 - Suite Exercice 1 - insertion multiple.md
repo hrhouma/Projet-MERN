@@ -1,4 +1,4 @@
-# Insertion des catégories 
+# Suite Exercice 1 - Insertion des catégories 
 
 Voici une liste de catégories et produits génériquesà ajouter pour le CREATE de CRUD :
 
@@ -18,7 +18,7 @@ Voici une liste de catégories et produits génériquesà ajouter pour le CREATE
 Chaque catégorie a des produits associés qui peuvent être ajoutés, lus, mis à jour ou supprimés dans l'application pour pratiquer les opérations CRUD.
 
 
-# Correction : 
+# Correction de la suite de l'Exercice 1 - Insertion des catégories : 
 
 ## Guide d'utilisation des CRUDs
 
@@ -89,6 +89,86 @@ Ce guide explique comment tester les opérations CRUD de l'application à l'aide
 2. Sélectionnez la méthode appropriée (GET, POST, DELETE) et saisissez l'URL.
 3. Pour les requêtes POST, ajoutez l'en-tête `Content-Type: application/json` et incluez le corps de la requête au format JSON dans la section `body`.
 4. Envoyez la requête et observez la réponse.
+
+### Pour créer une nouvelle catégorie "Électronique" avec des produits :
+
+```http
+POST http://localhost:3000/categorie
+Content-Type: application/json
+
+{
+    "code": "ELEC",
+    "designation": "Électronique"
+}
+```
+
+### (OPTIONNEL ou à FAIRE PLUS TARD) Pour ajouter des produits dans la catégorie "Électronique" :
+### Il faut ajouter la méthode d'insertion multiple dans Produit avant d'exécuter la requête (de la même façon de l'insertion multiple de Categorie)
+```http
+POST http://localhost:3000/produits
+Content-Type: application/json
+
+[
+    {
+        "code": "SMARTPHONE",
+        "libelle": "Smartphone X1",
+        "prix": 299.99,
+        "categorie": "CAT_LIVRES_SMARTPHONE" // Remplacer par l'ID réel de la catégorie Électronique
+    },
+    {
+        "code": "TABLETTE",
+        "libelle": "Tablette T200",
+        "prix": 199.99,
+        "categorie": "CAT_LIVRES_TABLETTE" // Remplacer par l'ID réel de la catégorie Électronique
+    },
+    {
+        "code": "LAPTOP",
+        "libelle": "Ordinateur portable P450",
+        "prix": 499.99,
+        "categorie": "CAT_LIVRES_LAPTOP" // Remplacer par l'ID réel de la catégorie Électronique
+    }
+]
+```
+
+### Pour créer une nouvelle catégorie "Livres" avec des produits :
+
+```http
+POST http://localhost:3000/categorie
+Content-Type: application/json
+
+{
+    "code": "BOOK",
+    "designation": "Livres"
+}
+```
+
+### (OPTIONNEL ou à FAIRE PLUS TARD) Pour ajouter des produits dans la catégorie "Livres" :
+
+```http
+POST http://localhost:3000/produits
+Content-Type: application/json
+
+[
+    {
+        "code": "ROMAN",
+        "libelle": "Le Comte de Monte-Cristo",
+        "prix": 14.99,
+        "categorie": "CAT_LIVRES_ROMANS" // Remplacer par l'ID réel de la catégorie Livres
+    },
+    {
+        "code": "DICO",
+        "libelle": "Larousse Français-Anglais",
+        "prix": 29.99,
+        "categorie": "CAT_LIVRES_DICO" // Remplacer par l'ID réel de la catégorie Livres
+    },
+    {
+        "code": "MANSC",
+        "libelle": "Manuel de Mathématiques",
+        "prix": 19.99,
+        "categorie": "CAT_LIVRES_MANSC" // Remplacer par l'ID réel de la catégorie Livres
+    }
+]
+```
 
 ## Évaluation
 

@@ -19,6 +19,7 @@ Dans votre contrôleur (par exemple, categorieController.js), ajoutez une nouvel
 // categorieController.js
 // Autres méthodes...
 
+```bash
 exports.delete_all_categories = function(req, res) {
     Categorie.deleteMany({}, function(err) {
         if (err) {
@@ -28,6 +29,7 @@ exports.delete_all_categories = function(req, res) {
         }
     });
 };
+```
 
 Dans cet exemple, Categorie.deleteMany({}) est utilisé pour supprimer toutes les entrées dans la collection Categorie. L'objet vide {} passé en tant que premier argument signifie qu'il n'y a pas de critères de sélection, donc toutes les entrées sont visées.
 
@@ -96,6 +98,7 @@ app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 
 Dans vos fichiers de route, ajoutez des commentaires Swagger pour décrire chaque route. Par exemple :
 
+```bash
 /**
  * @openapi
  * /categorie:
@@ -107,7 +110,7 @@ Dans vos fichiers de route, ajoutez des commentaires Swagger pour décrire chaqu
  */
 app.route('/categorie')
    .get(categorie.list_all_categorie);
-
+```
 Répétez cela pour toutes vos routes.
 
 ## 5. Accéder à la Documentation Swagger
@@ -130,6 +133,7 @@ module.exports = function (app) {
 
   // Routes pour les catégories
 
+```bash
   /**
    * @openapi
    * /categorie:
@@ -204,8 +208,11 @@ module.exports = function (app) {
      *         description: Catégorie supprimée avec succès.
      */
     .delete(categorie.delete_a_categorie);
+```
 
   ## Exercice 1 - Insertion multiple
+
+```bash
   /**
    * @openapi
    * /categories:
@@ -218,8 +225,11 @@ module.exports = function (app) {
   app.route('/categories')
     .get(categorie.list_all_categorie)
     .post(categorie.create_many_categories)
-  
+```
+
   ## Exercice 2 - Suppression multiple
+
+  ```bash
   /**
    * @openapi
    * /categories:
@@ -231,11 +241,13 @@ module.exports = function (app) {
    */
     .delete(categorie.delete_all_categories)
 };
-
+```
 
 
 
 ## 7. TOUS FONCTIONNE BIEN DANS categorieRoutes.js SAUF LES POST, PUT (AVEC CORPS DE LA REQUETE)  - NE VOUS INQUIÉTEZ PAS !  CORRECTION
+
+```bash
 var cors = require('cors');
 
 module.exports = function (app) {
@@ -342,8 +354,11 @@ module.exports = function (app) {
          *         description: Catégorie supprimée avec succès.
          */
         .delete(categorie.delete_a_categorie);
+```
 
   ##  Exercice 1 - Insertion multiple
+
+  ```bash
     /**
      * @openapi
      * /categories:
@@ -371,9 +386,11 @@ module.exports = function (app) {
     app.route('/categories')
         .get(categorie.list_all_categorie)
         .post(categorie.create_many_categories)
-    
+```
+ 
    ##  Exercice 2 - Suppression multiple
-    
+
+```bash
     /**
      * @openapi
      * /categories:
@@ -385,3 +402,4 @@ module.exports = function (app) {
      */
         .delete(categorie.delete_all_categories);
 };
+```

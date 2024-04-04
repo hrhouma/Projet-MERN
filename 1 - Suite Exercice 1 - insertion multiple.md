@@ -97,7 +97,7 @@ Content-Type: application/json
 }
 ```
 
-### 7. (OPTIONNEL ou à FAIRE PLUS TARD) - Ajouter des produits dans la catégorie "Électronique" :
+# 7. (OPTIONNEL ou à FAIRE PLUS TARD) - Ajouter des produits dans la catégorie "Électronique" :
 ### Il faut ajouter la méthode d'insertion multiple dans le contrôlleur du Produit avant d'exécuter la requête (de la même façon de l'insertion multiple dans le contrôlleur de Categorie)
 ```http
 POST http://localhost:3000/produits

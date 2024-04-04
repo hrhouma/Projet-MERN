@@ -108,19 +108,19 @@ Content-Type: application/json
         "code": "SMARTPHONE",
         "libelle": "Smartphone X1",
         "prix": 299.99,
-        "categorie": "CAT_LIVRES_SMARTPHONE" // Remplacer par l'ID réel de la catégorie Électronique
+        "categorie": "CAT_LIVRES_SMARTPHONE" 
     },
     {
         "code": "TABLETTE",
         "libelle": "Tablette T200",
         "prix": 199.99,
-        "categorie": "CAT_LIVRES_TABLETTE" // Remplacer par l'ID réel de la catégorie Électronique
+        "categorie": "CAT_LIVRES_TABLETTE" 
     },
     {
         "code": "LAPTOP",
         "libelle": "Ordinateur portable P450",
         "prix": 499.99,
-        "categorie": "CAT_LIVRES_LAPTOP" // Remplacer par l'ID réel de la catégorie Électronique
+        "categorie": "CAT_LIVRES_LAPTOP" 
     }
 ]
 ```
@@ -150,19 +150,19 @@ Content-Type: application/json
         "code": "ROMAN",
         "libelle": "Le Comte de Monte-Cristo",
         "prix": 14.99,
-        "categorie": "CAT_LIVRES_ROMANS" // Remplacer par l'ID réel de la catégorie Livres
+        "categorie": "CAT_LIVRES_ROMANS" 
     },
     {
         "code": "DICO",
         "libelle": "Larousse Français-Anglais",
         "prix": 29.99,
-        "categorie": "CAT_LIVRES_DICO" // Remplacer par l'ID réel de la catégorie Livres
+        "categorie": "CAT_LIVRES_DICO" 
     },
     {
         "code": "MANSC",
         "libelle": "Manuel de Mathématiques",
         "prix": 19.99,
-        "categorie": "CAT_LIVRES_MANSC" // Remplacer par l'ID réel de la catégorie Livres
+        "categorie": "CAT_LIVRES_MANSC" 
     }
 ]
 ```

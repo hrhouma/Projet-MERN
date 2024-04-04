@@ -5,16 +5,16 @@ Intégrez Swagger dans votre application Node.js pour générer une documentatio
 
 ---
 
-### 2- CORRECTION DÉTAILLÉE DE SWAGGER 
+# 2- CORRECTION DÉTAILLÉE DE SWAGGER 
 
-#### 1. Installation des Dépendances
+# 1. Installation des Dépendances
 Pour commencer, installez les paquets nécessaires à l'aide de npm :
 
 ```bash
 npm install swagger-ui-express swagger-jsdoc
 ```
 
-#### 2. Configuration de Swagger
+# 2. Configuration de Swagger
 Créez un fichier `swaggerConfig.js` à la racine de votre projet :
 
 ```javascript
@@ -40,7 +40,7 @@ module.exports = {
 };
 ```
 
-#### 3. Initialisation de Swagger dans votre Application
+# 3. Initialisation de Swagger dans votre Application
 Intégrez Swagger dans votre application en modifiant le fichier `server.js` :
 
 ```javascript
@@ -58,7 +58,7 @@ app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 // Reste du code...
 ```
 
-#### 4. Documenter Vos Routes
+# 4. Documenter Vos Routes
 Dans les fichiers de vos routes, ajoutez des commentaires Swagger pour chaque route. Par exemple :
 
 ```javascript
@@ -75,7 +75,7 @@ Dans les fichiers de vos routes, ajoutez des commentaires Swagger pour chaque ro
 app.route('/categorie').get(categorie.list_all_categorie);
 ```
 
-#### 5. Accéder à la Documentation Swagger
+# 5. Accéder à la Documentation Swagger
 Une fois que Swagger est configuré, lancez votre serveur avec `node server.js` et accédez à `http://localhost:3000/api-docs`.
 
 ### Remarques Finales

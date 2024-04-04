@@ -170,7 +170,8 @@ Content-Type: application/json
 # 10. Évaluation
 
 Après avoir exécuté chaque opération CRUD, documentez les résultats et votre compréhension de la manière dont l'application traite chaque requête.
-```
+
+---
 
 - Assurez-vous de remplacer `http://localhost:3000` par l'URL et le port réels si votre application s'exécute différemment.
 - Je vous encourage à écrire vos  observations et à poser des questions si vous rencontrez des difficultés ou des comportements inattendus.

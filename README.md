@@ -157,6 +157,8 @@ Pour vérifier que la base de données a été créée et est accessible, vous p
 
 🚀 **3 - Exercice 3 - Ajout de Swagger.md**
 
+🌟 **3 - Suite Exercise 3 - suppression multiple.md**
+
 🌈 **4 - Passez à la branche # 2 !**
 
 

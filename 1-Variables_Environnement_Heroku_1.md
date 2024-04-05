@@ -62,7 +62,5 @@ Configurer les variables d'environnement sur Heroku permet de gérer des éléme
 
 ## Conclusion
 
-Vous avez maintenant configuré les variables d'environnement pour votre application sur Heroku. Ces variables peuvent être utilisées pour gérer de manière sécurisée les informations sensibles et spécifiques à l'environnement sans les intégrer directement dans votre code.
-```
-
-Ce guide README.md donne une vue d'ensemble de la façon de configurer et d'utiliser les variables d'environnement sur Heroku, en partant de la préparation de l'application jusqu'à l'utilisation des variables dans votre application. Vous pouvez ajuster les instructions spécifiques à l'environnement de votre application et aux langages de programmation utilisés.
+- Vous avez maintenant configuré les variables d'environnement pour votre application sur Heroku. Ces variables peuvent être utilisées pour gérer de manière sécurisée les informations sensibles et spécifiques à l'environnement sans les intégrer directement dans votre code.
+- Ce guide README.md donne une vue d'ensemble de la façon de configurer et d'utiliser les variables d'environnement sur Heroku, en partant de la préparation de l'application jusqu'à l'utilisation des variables dans votre application. Vous pouvez ajuster les instructions spécifiques à l'environnement de votre application et aux langages de programmation utilisés.

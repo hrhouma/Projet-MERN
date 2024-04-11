@@ -4,7 +4,7 @@ Dans le monde du commerce électronique et des transactions en ligne, choisir le
 
 # 1 - Théorie - Fournisseurs d'APIs de Paiement Populaires
 
-# 1. Stripe
+# 1.1. Stripe
 - **Description**: Stripe est reconnu pour sa flexibilité, son interface API bien conçue et sa facilité d'intégration. Il supporte une large gamme de méthodes de paiement, y compris les cartes de crédit, les virements bancaires et les portefeuilles numériques.
 - **Langages de Programmation Supportés**: PHP, Ruby, Python, Java, Node.js, .NET, et plus.
 

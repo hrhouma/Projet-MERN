@@ -67,7 +67,7 @@ Assurez-vous de prendre en compte les frais de transaction, les options de paiem
 
 # Références
 - https://www.geeksforgeeks.org/how-to-integrate-paypal-in-node/
-- 
+- **Cééer un compte ici** ===­> https://developer.paypal.com/home
 ## jsonworld
 - https://dev.to/pankajkumar/paypal-integration-in-nodejs-application-2k3i
 - https://jsonworld.com/demo/paypal-integration-in-nodejs-application

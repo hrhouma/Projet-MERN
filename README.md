@@ -77,8 +77,8 @@ Assurez-vous de prendre en compte les frais de transaction, les options de paiem
 - https://codeculturepro.medium.com/simple-5-steps-for-your-paypal-payment-integration-in-node-js-400a9dbc8c4d
 
 ## nodejsera.com
-https://www.nodejsera.com/paypal-payment-integration-using-nodejs-part1.html
-https://www.nodejsera.com/paypal-payment-integration-using-nodejs-part2.html
+- https://www.nodejsera.com/paypal-payment-integration-using-nodejs-part1.html
+- https://www.nodejsera.com/paypal-payment-integration-using-nodejs-part2.html
 
 # YOUTUBE 
 - https://www.youtube.com/watch?v=muR3W2EP3W8&ab_channel=CodingShiksha

@@ -8,7 +8,7 @@ Dans le monde du commerce électronique et des transactions en ligne, choisir le
 - **Description**: Stripe est reconnu pour sa flexibilité, son interface API bien conçue et sa facilité d'intégration. Il supporte une large gamme de méthodes de paiement, y compris les cartes de crédit, les virements bancaires et les portefeuilles numériques.
 - **Langages de Programmation Supportés**: PHP, Ruby, Python, Java, Node.js, .NET, et plus.
 
-# 2. PayPal
+# 1.2. PayPal
 - **Description**: PayPal est l'un des services de paiement en ligne les plus anciens et les plus largement utilisés. Il offre une flexibilité importante pour les paiements directs, les abonnements et même les paiements en personne via PayPal Here.
 - **Langages de Programmation Supportés**: PHP, Java, Ruby, Python, Node.js, .NET, et plus.
 

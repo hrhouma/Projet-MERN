@@ -8,3 +8,11 @@
  - https://github.com/musibs/Spring/tree/master/spring-boot-todo-app
  - https://github.com/hrhouma/partie4.git (avec des erreurs pour le troubleshooting - ancien examen de services web)
 
+## Commandes utiles
+- mvn -version
+- mvn clean install
+- mvn clean package -DskipTests
+- mvn clean install -DskipTests
+- mvn spring-boot:run
+
+

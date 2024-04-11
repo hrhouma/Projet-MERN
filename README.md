@@ -1,18 +1,6 @@
-# Démo 1 :
-
-- https://www.youtube.com/watch?v=KxqlJblhzfI
-
-# Démo 2 :
-
- - https://medium.com/thecodefountain/spring-security-series-securing-spring-boot-todo-application-part-2-85b892dc8278
- - https://github.com/musibs/Spring/tree/master/spring-boot-todo-app
- - https://github.com/hrhouma/partie4.git (avec des erreurs pour le troubleshooting - ancien examen de services web)
-
-## Commandes utiles
-- mvn -version
-- mvn clean install
-- mvn clean package -DskipTests
-- mvn clean install -DskipTests
-- mvn spring-boot:run
+# Labo 2 : Continuité des branches 1 et 2 avec les fonctionnalités suivantes
+- intégration du front-end (aider les étudiants en partageant un exemple de projet)
+- intégration de JWT
+- intégration d'une modalité de paiement (Paypal ou stripe)
 
 

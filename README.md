@@ -1,4 +1,7 @@
 # PayPal
+- Cééer un compte ici sur developer
+===­> https://developer.paypal.com/home
+===> https://developer.paypal.com/api/rest/
 # Guide des Fournisseurs d'APIs de Paiement Populaires et Leur Intégration par Langage de Programmation
 
 Dans le monde du commerce électronique et des transactions en ligne, choisir le bon fournisseur d'API de paiement est crucial pour offrir une expérience utilisateur fluide et sécurisée. Ce guide présente un aperçu des fournisseurs d'APIs de paiement les plus populaires et examine leur compatibilité avec différents langages de programmation.

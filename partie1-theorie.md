@@ -8,10 +8,10 @@
 3. [Appel à une Méthode Protégée par Authentification](#appel-à-une-méthode-protégée-par-authentification)
    - [Exemple d'Appel Authentifié](#exemple-dappel-authentifié)
 
-## Introduction
+# 1- Introduction
 Un jeton d'authentification (bearer token) est une chaîne de caractères codée qui contient des informations concernant un utilisateur. Ce jeton est essentiel pour accéder aux méthodes protégées des APIs.
 
-## Obtention d'un Jeton d'Authentification
+# 2 -  Obtention d'un Jeton d'Authentification
 ### Méthode /auth/token
 Pour obtenir un jeton d'authentification, effectuez une requête HTTP POST à la méthode `/auth/token` en envoyant vos identifiants (généralement un identifiant et un mot de passe) dans le corps de la requête.
 
@@ -43,7 +43,7 @@ if (response.ok) {
 }
 ```
 
-## Appel à une Méthode Protégée par Authentification
+# 3 - Appel à une Méthode Protégée par Authentification
 Pour effectuer un appel à une méthode protégée, incluez le jeton d'authentification obtenu précédemment dans l'en-tête de votre requête HTTP sous le champ `authorization`.
 
 ### Exemple d'Appel Authentifié

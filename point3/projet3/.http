@@ -1,0 +1,6 @@
+POST http://localhost:5000/user/generateToken
+Content-Type: application/json
+
+### Validate JWT Token
+GET http://localhost:5000/user/validateToken
+gfg_token_header_key: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0aW1lIjoiV2VkIE1heSAwMSAyMDI0IDEzOjQ3OjQxIEdNVC0wNDAwIChoZXVyZSBhdmFuY8OpZSBkZSBs4oCZRXN0KSIsInVzZXJJZCI6MTIsImlhdCI6MTcxNDU4NTY2MX0.pp2US2PTU17mBNLbLHnWs8mVLrjYEeXj4_YU8AXupII

@@ -9,7 +9,7 @@
    Commencez par lire le document `partie1-theorie.md` pour comprendre les bases théoriques.
 
 2. **Approfondir la pratique :**  
-   Lisez ensuite `partie2-pratique1-APIS+Jeton.docx`, qui détaille davantage le mécanisme des jetons JWT.
+   Lisez ensuite `partie2-pratique1-APIS+Jeton.docx`, qui détaille davantage le mécanisme des jetons JWT (le même document `partie1-theorie.md`).
 
 3. **Créer une petite application :**  
    Mettez la théorie en pratique avec une petite application `Hello JWT`. Suivez les instructions dans [ce tutoriel](https://www.geeksforgeeks.org/jwt-authentication-with-node-js/).

@@ -139,3 +139,44 @@ validateToken();
    ```
 
 - Cela devrait envoyer une requête `GET` au serveur pour valider le token et afficher le résultat dans la console.
+
+
+
+# Annexe 4 pour la point 3 :
+
+- Pour tester l'API avec l'extension Rest Client de Visual Studio Code, vous pouvez suivre ces étapes :
+
+### Étape 1 : Installer l'extension Rest Client
+- Si vous ne l'avez pas encore installée, ouvrez Visual Studio Code et installez l'extension "REST Client" de Huachao Mao à partir du marché des extensions (VS Code Extension Marketplace).
+
+### Étape 2 : Créer un fichier `.http`
+1. Créez un nouveau fichier et donnez-lui l'extension `.http`, par exemple `testToken.http`.
+2. Ajoutez-y les requêtes suivantes pour générer et valider le token :
+
+#### Générer le token (Requête POST)
+```http
+### Generate JWT Token
+POST http://localhost:5000/user/generateToken
+Content-Type: application/json
+```
+
+#### Valider le token (Requête GET)
+Après avoir obtenu le token de la première requête, ajoutez une seconde requête pour valider le token. Collez le token obtenu dans l'en-tête `gfg_token_header_key`.
+
+```http
+### Validate JWT Token
+GET http://localhost:5000/user/validateToken
+gfg_token_header_key: Bearer <votre_token> 
+```
+
+### Étape 3 : Exécuter les requêtes
+1. Ouvrez le fichier `.http` dans Visual Studio Code.
+2. Cliquez sur le bouton "Send Request" au-dessus de la première requête (`POST`), et copiez le token généré.
+3. Collez le token généré dans la requête `GET` à la place de `<votre_token>`.
+4. Cliquez sur "Send Request" au-dessus de la requête `GET` pour valider le token.
+
+### Étape 4 : Vérifier les résultats
+- Si le token est valide, vous devriez voir le message **Successfully Verified**.
+- Si le token est invalide ou expiré, vous verrez un message d'erreur avec un code de statut 401.
+
+- Assurez-vous que le serveur Node.js est en cours d'exécution et que les variables d'environnement sont correctement configurées.

@@ -84,9 +84,19 @@ Lorsque ce `data` est signé avec `jwt.sign(data, jwtSecretKey)`, il se passe le
 
 - Sinon aussi, vous pouvez utiliser un fetch (**Méthode2**)
 
-```js
+
+# Annexe 3 pour la point 3 :
+- Pour tester la validation du token à l'aide d'une requête `GET` (avec `fetch`) en utilisant le token généré par votre endpoint `/user/generateToken`, suivez les étapes suivantes :
+
+### Étape 1: Générer un token (requête POST)
+Générez d'abord le token à l'aide de la requête POST `/user/generateToken`. Si vous le faites via Postman, copiez le token obtenu pour l'utiliser dans la validation suivante.
+
+### Étape 2: Code JavaScript pour tester le GET avec fetch
+- Créez un fichier `testToken.js` et insérez le code suivant :
+
+```javascript
 // Remplacez `<votre_token>` par le token généré précédemment
-const token = '<votre_token>';
+const token = '<votre_token>'; // Remplacez par le token généré
 
 // Remplacez par l'URL de votre serveur
 const validateTokenURL = 'http://localhost:5000/user/validateToken';
@@ -94,7 +104,6 @@ const validateTokenURL = 'http://localhost:5000/user/validateToken';
 // Assurez-vous d'utiliser la clé d'en-tête correcte (ici `gfg_token_header_key`)
 const tokenHeaderKey = 'gfg_token_header_key';
 
-// Fonction pour valider le token
 async function validateToken() {
   try {
     const response = await fetch(validateTokenURL, {
@@ -120,3 +129,13 @@ async function validateToken() {
 // Appeler la fonction pour valider le token
 validateToken();
 ```
+
+### Étape 3: Exécution du script
+1. Assurez-vous que votre serveur Node.js est en cours d'exécution.
+2. Remplacez `<votre_token>` par le token généré dans l'étape 1.
+3. Ensuite, exécutez le script avec Node.js:
+   ```bash
+   node testToken.js
+   ```
+
+- Cela devrait envoyer une requête `GET` au serveur pour valider le token et afficher le résultat dans la console.

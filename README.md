@@ -81,3 +81,42 @@ Lorsque ce `data` est signé avec `jwt.sign(data, jwtSecretKey)`, il se passe le
 5. **Envoie la requête :** Clique sur "Send" pour envoyer la requête.
 
 - Si le jeton est valide, tu devrais recevoir la réponse `"Successfully Verified"`.
+
+- Sinon aussi, vous pouvez utiliser un fetch (**Méthode2**)
+
+```js
+// Remplacez `<votre_token>` par le token généré précédemment
+const token = '<votre_token>';
+
+// Remplacez par l'URL de votre serveur
+const validateTokenURL = 'http://localhost:5000/user/validateToken';
+
+// Assurez-vous d'utiliser la clé d'en-tête correcte (ici `gfg_token_header_key`)
+const tokenHeaderKey = 'gfg_token_header_key';
+
+// Fonction pour valider le token
+async function validateToken() {
+  try {
+    const response = await fetch(validateTokenURL, {
+      method: 'GET',
+      headers: {
+        [tokenHeaderKey]: `Bearer ${token}`
+      }
+    });
+
+    if (response.ok) {
+      const data = await response.text();
+      console.log(data); // Imprimez le message de succès
+    } else {
+      console.error(`Erreur: ${response.status} - ${response.statusText}`);
+      const errorText = await response.text();
+      console.error(errorText); // Imprimez le message d'erreur
+    }
+  } catch (error) {
+    console.error('Erreur de validation du token:', error.message);
+  }
+}
+
+// Appeler la fonction pour valider le token
+validateToken();
+```

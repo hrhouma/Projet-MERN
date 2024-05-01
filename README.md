@@ -28,7 +28,7 @@
    - [Gist: Node.js JWT Example](https://gist.github.com/nurmdrafi/e1c8b9562d906e736ba309bacf816491)
 
 
-# Annexe pour la point 3 :
+# Annexe 1 pour la point 3 :
 
 - Dans cet exemple, le token généré par `jwt.sign` inclut la date dans sa charge utile (payload). 
 - Cela permet d'intégrer la date de création du token dans le jeton lui-même.
@@ -59,3 +59,25 @@ Lorsque ce `data` est signé avec `jwt.sign(data, jwtSecretKey)`, il se passe le
    ```
 
 - Incorporer la date dans le token permet, par exemple, de vérifier quand il a été créé et de le valider en fonction d'une durée limite (expiration).
+
+
+
+# Annexe 2 pour la point 3 :
+
+- Pour envoyer une requête GET avec un jeton JWT dans Postman, tu devrais ajouter le jeton dans les en-têtes de la requête. 
+- Voici comment procéder :
+
+1. **Ouvre Postman :** Démarre Postman et crée une nouvelle requête.
+
+2. **Choisis la méthode GET :** Assure-toi que la méthode sélectionnée soit `GET`.
+
+3. **Entrez l'URL :** Tape l'URL du serveur, par exemple `http://localhost:5000/user/validateToken`.
+
+4. **Ajoute le jeton dans l'en-tête :**
+   - Clique sur l'onglet "Headers".
+   - Ajoute une nouvelle clé d'en-tête avec le nom que ton application attend, généralement `Authorization` ou une valeur similaire stockée dans `TOKEN_HEADER_KEY`.
+   - Comme valeur de l'en-tête, ajoute "Bearer " suivi du jeton JWT. Par exemple : `Bearer <ton_jwt>`.
+
+5. **Envoie la requête :** Clique sur "Send" pour envoyer la requête.
+
+- Si le jeton est valide, tu devrais recevoir la réponse `"Successfully Verified"`.

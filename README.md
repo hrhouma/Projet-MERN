@@ -402,19 +402,21 @@ Pensez au token JWT comme à un **ticket de cinéma**. Voici comment on peut com
 - **Sécurité** : Assure que les ressources sensibles ne sont accessibles qu'à ceux qui sont authentifiés et autorisés.
 
 
-# Annexe 8 pour la point 3 : Fire rapprocher le code à la vie réelle avec utilisation de EMAIL  + PASSWORD :
+# Annexe 8 pour la point 3 : Faire rapprocher le code à la vie réelle avec utilisation de EMAIL  + PASSWORD :
 
 
 1. **env**
-   ```javascript
+
+```javascript
 PORT = 5000
 EMAIL = rehoumahaythem@gmail.com
 PASSWORD = haythemrehouma
-   ```
+```
    - **Analogie** : Pensez à un contrôle de sécurité dans un aéroport. Le personnel demande votre carte d'embarquement (token) pour vérifier que vous avez le droit.
 
 2. **index.js**
-   ```javascript
+
+```javascript
 const express = require('express');
 const dotenv = require('dotenv');
 const jwt = require('jsonwebtoken');
@@ -465,12 +467,12 @@ app.get("/user/validateToken", verifyToken, (req, res) => {
 });
 
 console.log(`Starting server on port ${PORT}`);
-
-   ```
-   - **Analogie** : Pensez à un contrôle de sécurité dans un aéroport. Le personnel demande votre carte d'embarquement (token) pour vérifier que vous avez le droit.
+```
+- **Analogie** : Pensez à un contrôle de sécurité dans un aéroport. Le personnel demande votre carte d'embarquement (token) pour vérifier que vous avez le droit.
 
 3. **test.http**
-   ```javascript
+
+```javascript
 ### Generate JWT Token
 POST http://localhost:5000/user/generateToken
 Content-Type: application/json
@@ -479,9 +481,8 @@ Content-Type: application/json
 
 GET http://localhost:5000/user/validateToken
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0aW1lIjoiV2VkIE1heSAwMSAyMDI0IDIwOjQ3OjE0IEdNVC0wNDAwIChFYXN0ZXJuIERheWxpZ2h0IFNhdmluZyBUaW1lKSIsInVzZXJJZCI6MTIsImlhdCI6MTcxNDYxMDgzNH0.S2M66BIG29-FTtB8YQ_ymMxUjR-QpK0_wbFkFpaG52o
-
-   ```
-   - **Analogie** : Pensez à un contrôle de sécurité dans un aéroport. Le personnel demande votre carte d'embarquement (token) pour vérifier que vous avez le droit.
+```
+- **Analogie** : Pensez à un contrôle de sécurité dans un aéroport. Le personnel demande votre carte d'embarquement (token) pour vérifier que vous avez le droit.
 
 
 4. **test**

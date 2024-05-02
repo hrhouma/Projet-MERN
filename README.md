@@ -400,3 +400,197 @@ Pensez au token JWT comme à un **ticket de cinéma**. Voici comment on peut com
 ### Pourquoi valider un token ?
 - **Contrôle d'accès** : Pour vérifier si un utilisateur a le droit d'accéder à une ressource protégée.
 - **Sécurité** : Assure que les ressources sensibles ne sont accessibles qu'à ceux qui sont authentifiés et autorisés.
+
+
+# Annexe 8 pour la point 3 : Fire rapprocher le code à la vie réelle avec utilisation de EMAIL  + PASSWORD :
+
+
+1. **env**
+   ```javascript
+PORT = 5000
+EMAIL = rehoumahaythem@gmail.com
+PASSWORD = haythemrehouma
+   ```
+   - **Analogie** : Pensez à un contrôle de sécurité dans un aéroport. Le personnel demande votre carte d'embarquement (token) pour vérifier que vous avez le droit.
+
+2. **index.js**
+   ```javascript
+const express = require('express');
+const dotenv = require('dotenv');
+const jwt = require('jsonwebtoken');
+
+dotenv.config();
+
+const app = express();
+const PORT = process.env.PORT || 5000;
+const SECRET = process.env.PASSWORD;
+
+app.listen(PORT, () => {
+    console.log(`Server is up and running on port ${PORT} ...`);
+});
+
+// Generate JWT Token
+app.post("/user/generateToken", (req, res) => {
+    const data = {
+        time: Date(),
+        userId: 12,
+    };
+
+    const token = jwt.sign(data, SECRET);
+    console.log("Generated Token:", token); // Debugging
+    res.send(token);
+});
+
+// Middleware to verify JWT Token
+function verifyToken(req, res, next) {
+    try {
+        const token = req.header('Authorization');
+        if (!token) {
+            return res.status(401).send("No token provided");
+        }
+
+        const verified = jwt.verify(token.replace('Bearer ', ''), SECRET);
+        req.user = verified; // Store the verified data for later use
+        next(); // Continue to the next middleware
+    } catch (error) {
+        console.error("Token Verification Error:", error); // Debugging
+        return res.status(401).send("Invalid Token");
+    }
+}
+
+// Validate JWT Token
+app.get("/user/validateToken", verifyToken, (req, res) => {
+    console.log("Verified Data:", req.user); // Debugging
+    res.send("Successfully Verified");
+});
+
+console.log(`Starting server on port ${PORT}`);
+
+   ```
+   - **Analogie** : Pensez à un contrôle de sécurité dans un aéroport. Le personnel demande votre carte d'embarquement (token) pour vérifier que vous avez le droit.
+
+3. **test.http**
+   ```javascript
+### Generate JWT Token
+POST http://localhost:5000/user/generateToken
+Content-Type: application/json
+
+### Validate JWT Token
+
+GET http://localhost:5000/user/validateToken
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0aW1lIjoiV2VkIE1heSAwMSAyMDI0IDIwOjQ3OjE0IEdNVC0wNDAwIChFYXN0ZXJuIERheWxpZ2h0IFNhdmluZyBUaW1lKSIsInVzZXJJZCI6MTIsImlhdCI6MTcxNDYxMDgzNH0.S2M66BIG29-FTtB8YQ_ymMxUjR-QpK0_wbFkFpaG52o
+
+   ```
+   - **Analogie** : Pensez à un contrôle de sécurité dans un aéroport. Le personnel demande votre carte d'embarquement (token) pour vérifier que vous avez le droit.
+
+
+4. **test**
+   ```javascript
+// Replace with the token generated earlier
+const token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0aW1lIjoiV2VkIE1heSAwMSAyMDI0IDIxOjE2OjA4IEdNVC0wNDAwIChFYXN0ZXJuIERheWxpZ2h0IFNhdmluZyBUaW1lKSIsInVzZXJJZCI6MTIsImlhdCI6MTcxNDYxMjU2OH0.cvZogUmEAmHByvN7CSUA24h9Nq3xGtOZKVIhyKDp2vo';
+
+// Replace with your server's URL
+const validateTokenURL = 'http://localhost:5000/user/validateToken';
+
+async function validateToken() {
+  try {
+    const response = await fetch(validateTokenURL, {
+      method: 'GET',
+      headers: {
+        'Authorization': `Bearer ${token}` // Set the token in the 'Authorization' header
+      }
+    });
+
+    if (response.ok) {
+      const data = await response.text();
+      console.log(data); // Print the success message
+    } else {
+      console.error(`Error: ${response.status} - ${response.statusText}`);
+      const errorText = await response.text();
+      console.error(errorText); // Print the error message
+    }
+  } catch (error) {
+    console.error('Token validation error:', error.message);
+  }
+}
+
+// Call the function to validate the token
+validateToken();
+
+   ```
+   - **Analogie** : Pensez à un contrôle de sécurité dans un aéroport. Le personnel demande votre carte d'embarquement (token) pour vérifier que vous avez le droit.
+
+
+
+
+
+
+
+5. **env**
+   ```javascript
+PORT = 5000
+EMAIL = rehoumahaythem@gmail.com
+PASSWORD = haythemrehouma
+   ```
+   - **Analogie** : Pensez à un contrôle de sécurité dans un aéroport. Le personnel demande votre carte d'embarquement (token) pour vérifier que vous avez le droit.
+
+6. **env**
+   ```javascript
+PORT = 5000
+EMAIL = rehoumahaythem@gmail.com
+PASSWORD = haythemrehouma
+   ```
+   - **Analogie** : Pensez à un contrôle de sécurité dans un aéroport. Le personnel demande votre carte d'embarquement (token) pour vérifier que vous avez le droit.
+
+7. **env**
+   ```javascript
+PORT = 5000
+EMAIL = rehoumahaythem@gmail.com
+PASSWORD = haythemrehouma
+   ```
+   - **Analogie** : Pensez à un contrôle de sécurité dans un aéroport. Le personnel demande votre carte d'embarquement (token) pour vérifier que vous avez le droit.
+
+8. **env**
+   ```javascript
+PORT = 5000
+EMAIL = rehoumahaythem@gmail.com
+PASSWORD = haythemrehouma
+   ```
+   - **Analogie** : Pensez à un contrôle de sécurité dans un aéroport. Le personnel demande votre carte d'embarquement (token) pour vérifier que vous avez le droit.
+
+9. **env**
+   ```javascript
+PORT = 5000
+EMAIL = rehoumahaythem@gmail.com
+PASSWORD = haythemrehouma
+   ```
+   - **Analogie** : Pensez à un contrôle de sécurité dans un aéroport. Le personnel demande votre carte d'embarquement (token) pour vérifier que vous avez le droit.
+
+10. **env**
+   ```javascript
+PORT = 5000
+EMAIL = rehoumahaythem@gmail.com
+PASSWORD = haythemrehouma
+   ```
+   - **Analogie** : Pensez à un contrôle de sécurité dans un aéroport. Le personnel demande votre carte d'embarquement (token) pour vérifier que vous avez le droit.
+
+11. **env**
+   ```javascript
+PORT = 5000
+EMAIL = rehoumahaythem@gmail.com
+PASSWORD = haythemrehouma
+   ```
+   - **Analogie** : Pensez à un contrôle de sécurité dans un aéroport. Le personnel demande votre carte d'embarquement (token) pour vérifier que vous avez le droit.
+
+12. **env**
+   ```javascript
+PORT = 5000
+EMAIL = rehoumahaythem@gmail.com
+PASSWORD = haythemrehouma
+   ```
+   - **Analogie** : Pensez à un contrôle de sécurité dans un aéroport. Le personnel demande votre carte d'embarquement (token) pour vérifier que vous avez le droit.
+
+
+
+
+  

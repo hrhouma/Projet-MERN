@@ -78,6 +78,6 @@ Assurez-vous d'avoir les éléments suivants installés :
 - **Réponse :**
   - `200 OK`: Le token est correctement vérifié.
   - `401 Unauthorized`: Token invalide ou pas de token fourni.
-```
+
 
 Ce `README.md` explique en détail comment installer, configurer, et utiliser le projet.

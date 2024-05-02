@@ -486,7 +486,8 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0aW1lIjoiV2VkIE1he
 
 
 4. **test**
-   ```javascript
+
+```javascript
 // Replace with the token generated earlier
 const token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0aW1lIjoiV2VkIE1heSAwMSAyMDI0IDIxOjE2OjA4IEdNVC0wNDAwIChFYXN0ZXJuIERheWxpZ2h0IFNhdmluZyBUaW1lKSIsInVzZXJJZCI6MTIsImlhdCI6MTcxNDYxMjU2OH0.cvZogUmEAmHByvN7CSUA24h9Nq3xGtOZKVIhyKDp2vo';
 
@@ -517,9 +518,8 @@ async function validateToken() {
 
 // Call the function to validate the token
 validateToken();
-
-   ```
-   - **Analogie** : Pensez à un contrôle de sécurité dans un aéroport. Le personnel demande votre carte d'embarquement (token) pour vérifier que vous avez le droit.
+```
+- **Analogie** : Pensez à un contrôle de sécurité dans un aéroport. Le personnel demande votre carte d'embarquement (token) pour vérifier que vous avez le droit.
 
 
 

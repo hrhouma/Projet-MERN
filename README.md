@@ -537,76 +537,119 @@ validateToken();
 - **Analogie** : Pensez à un contrôle de sécurité dans un aéroport. Le personnel demande votre carte d'embarquement (token) pour vérifier que vous avez le droit.
 
 
+# Annexe 9 pour la point 3 : Faire rapprocher le code encore à la vie réelle avec utilisation de EMAIL  + PASSWORD :
+
+## code serveur index.js
+
+1. Change the verifyToken middleware to read the EMAIL header instead of Authorization.
+2. Make sure to remove the Bearer prefix since it's not required for custom headers.
+
+```javascript
+const express = require('express');
+const dotenv = require('dotenv');
+const jwt = require('jsonwebtoken');
+
+dotenv.config();
+
+const app = express();
+const PORT = process.env.PORT || 5000;
+const SECRET = process.env.PASSWORD;
+
+app.listen(PORT, () => {
+    console.log(`Server is up and running on port ${PORT} ...`);
+});
+
+// Generate JWT Token
+app.post("/user/generateToken", (req, res) => {
+    const data = {
+        time: Date(),
+        userId: 12,
+    };
+
+    const token = jwt.sign(data, SECRET);
+    console.log("Generated Token:", token); // Debugging
+    res.send(token);
+});
+
+// Middleware to verify JWT Token with custom header
+function verifyToken(req, res, next) {
+    try {
+        const token = req.header('EMAIL'); // Read the custom header
+        if (!token) {
+            return res.status(401).send("No token provided");
+        }
+
+        const verified = jwt.verify(token, SECRET); // No 'Bearer' prefix
+        req.user = verified; // Store the verified data for later use
+        next(); // Continue to the next middleware
+    } catch (error) {
+        console.error("Token Verification Error:", error); // Debugging
+        return res.status(401).send("Invalid Token");
+    }
+}
+
+// Validate JWT Token
+app.get("/user/validateToken", verifyToken, (req, res) => {
+    console.log("Verified Data:", req.user); // Debugging
+    res.send("Successfully Verified");
+});
+
+console.log(`Starting server on port ${PORT}`);
+
+```
+## code client testToken.js
+```javascript
+// Replace with the token generated earlier
+const token = '<your_generated_token>'; // Use the actual token
+const validateTokenURL = 'http://localhost:5000/user/validateToken';
+const tokenHeaderKey = 'EMAIL';
+
+async function validateToken() {
+  try {
+    const response = await fetch(validateTokenURL, {
+      method: 'GET',
+      headers: {
+        [tokenHeaderKey]: token // Set the token in the 'EMAIL' header
+      }
+    });
+
+    if (response.ok) {
+      const data = await response.text();
+      console.log(data); // Print the success message
+    } else {
+      console.error(`Error: ${response.status} - ${response.statusText}`);
+      const errorText = await response.text();
+      console.error(errorText); // Print the error message
+    }
+  } catch (error) {
+    console.error('Token validation error:', error.message);
+  }
+}
+
+// Call the function to validate the token
+validateToken();
+
+```
 
 
 
 
+## code client test.http
+### Voici comment mettre à jour votre fichier `.http` (test.http) pour effectuer les tests :
 
-5. **env**
-   ```javascript
-PORT = 5000
-EMAIL = rehoumahaythem@gmail.com
-PASSWORD = haythemrehouma
-   ```
-   - **Analogie** : Pensez à un contrôle de sécurité dans un aéroport. Le personnel demande votre carte d'embarquement (token) pour vérifier que vous avez le droit.
+**Générer le token JWT**
+```http
+POST http://localhost:5000/user/generateToken
+Content-Type: application/json
+```
 
-6. **env**
-   ```javascript
-PORT = 5000
-EMAIL = rehoumahaythem@gmail.com
-PASSWORD = haythemrehouma
-   ```
-   - **Analogie** : Pensez à un contrôle de sécurité dans un aéroport. Le personnel demande votre carte d'embarquement (token) pour vérifier que vous avez le droit.
+**Valider le token JWT**
+Assurez-vous d'utiliser l'en-tête `EMAIL` avec le token au lieu de l'en-tête `Authorization` :
 
-7. **env**
-   ```javascript
-PORT = 5000
-EMAIL = rehoumahaythem@gmail.com
-PASSWORD = haythemrehouma
-   ```
-   - **Analogie** : Pensez à un contrôle de sécurité dans un aéroport. Le personnel demande votre carte d'embarquement (token) pour vérifier que vous avez le droit.
+```http
+GET http://localhost:5000/user/validateToken
+EMAIL: <votre_token_généré>
+```
 
-8. **env**
-   ```javascript
-PORT = 5000
-EMAIL = rehoumahaythem@gmail.com
-PASSWORD = haythemrehouma
-   ```
-   - **Analogie** : Pensez à un contrôle de sécurité dans un aéroport. Le personnel demande votre carte d'embarquement (token) pour vérifier que vous avez le droit.
-
-9. **env**
-   ```javascript
-PORT = 5000
-EMAIL = rehoumahaythem@gmail.com
-PASSWORD = haythemrehouma
-   ```
-   - **Analogie** : Pensez à un contrôle de sécurité dans un aéroport. Le personnel demande votre carte d'embarquement (token) pour vérifier que vous avez le droit.
-
-10. **env**
-   ```javascript
-PORT = 5000
-EMAIL = rehoumahaythem@gmail.com
-PASSWORD = haythemrehouma
-   ```
-   - **Analogie** : Pensez à un contrôle de sécurité dans un aéroport. Le personnel demande votre carte d'embarquement (token) pour vérifier que vous avez le droit.
-
-11. **env**
-   ```javascript
-PORT = 5000
-EMAIL = rehoumahaythem@gmail.com
-PASSWORD = haythemrehouma
-   ```
-   - **Analogie** : Pensez à un contrôle de sécurité dans un aéroport. Le personnel demande votre carte d'embarquement (token) pour vérifier que vous avez le droit.
-
-12. **env**
-   ```javascript
-PORT = 5000
-EMAIL = rehoumahaythem@gmail.com
-PASSWORD = haythemrehouma
-   ```
-   - **Analogie** : Pensez à un contrôle de sécurité dans un aéroport. Le personnel demande votre carte d'embarquement (token) pour vérifier que vous avez le droit.
-
-
-
-
-  
+- Remplacez `<votre_token_généré>` par le token réel obtenu à partir de l'endpoint `/user/generateToken`.
+- Cette configuration de test vous aidera à vérifier l'utilisation de l'en-tête `EMAIL` pour la validation des tokens JWT.

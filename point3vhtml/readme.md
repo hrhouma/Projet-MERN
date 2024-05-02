@@ -12,8 +12,8 @@ Assurez-vous d'avoir les éléments suivants installés :
 ### Installation
 1. **Cloner le Dépôt**
    ```bash
-   git clone <url_du_dépôt>
-   cd <répertoire_du_dépôt>
+   git clone https://github.com/hrhouma/jwtdemo1.git
+   cd jwtdemo1
    ```
 
 2. **Installer les Dépendances**
@@ -78,6 +78,5 @@ Assurez-vous d'avoir les éléments suivants installés :
 - **Réponse :**
   - `200 OK`: Le token est correctement vérifié.
   - `401 Unauthorized`: Token invalide ou pas de token fourni.
-
 
 Ce `README.md` explique en détail comment installer, configurer, et utiliser le projet.

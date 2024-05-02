@@ -405,6 +405,21 @@ Pensez au token JWT comme à un **ticket de cinéma**. Voici comment on peut com
 # Annexe 8 pour la point 3 : Faire rapprocher le code à la vie réelle avec utilisation de EMAIL  + PASSWORD :
 
 
+```javascript
+PORT = 5000
+EMAIL = rehoumahaythem@gmail.com
+PASSWORD = haythemrehouma
+```
+
+![image](https://github.com/hrhouma/Projet-MERN/assets/10111526/4eea616a-1176-4567-9e4b-e3ba53ba5a4a)
+```javascript
+node index.js
+node testToken.js
+test.http
+```
+![image](https://github.com/hrhouma/Projet-MERN/assets/10111526/e20e1bca-6354-46f1-ad77-651a694b8b25)
+
+
 1. **env**
 
 ```javascript
@@ -485,7 +500,7 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0aW1lIjoiV2VkIE1he
 - **Analogie** : Pensez à un contrôle de sécurité dans un aéroport. Le personnel demande votre carte d'embarquement (token) pour vérifier que vous avez le droit.
 
 
-4. **test**
+4. **testToken.js**
 
 ```javascript
 // Replace with the token generated earlier

@@ -27,8 +27,8 @@
    - [Node.js JWT Express.js Tutorial](https://www.digitalocean.com/community/tutorials/nodejs-jwt-expressjs)
    - [Gist: Node.js JWT Example](https://gist.github.com/nurmdrafi/e1c8b9562d906e736ba309bacf816491)
 
-
-# Annexe 0 pour la point 3 :
+-------------------
+# Annexe 0 pour le point 3 :
 
 - Il faut remplacer le code dans index.js par le suivant (correction):
 ```js
@@ -90,7 +90,7 @@ console.log(`Starting server on port ${PORT}`);
 ```
 
 
-# Annexe 1 pour la point 3 :
+# Annexe 1 pour le point 3 :
 
 - Dans cet exemple, le token généré par `jwt.sign` inclut la date dans sa charge utile (payload). 
 - Cela permet d'intégrer la date de création du token dans le jeton lui-même.
@@ -123,8 +123,8 @@ Lorsque ce `data` est signé avec `jwt.sign(data, jwtSecretKey)`, il se passe le
 - Incorporer la date dans le token permet, par exemple, de vérifier quand il a été créé et de le valider en fonction d'une durée limite (expiration).
 
 
-
-# Annexe 2 pour la point 3 :
+-------------------
+# Annexe 2 pour le point 3 :
 
 - Pour envoyer une requête GET avec un jeton JWT dans Postman, tu devrais ajouter le jeton dans les en-têtes de la requête. 
 - Voici comment procéder :
@@ -146,8 +146,8 @@ Lorsque ce `data` est signé avec `jwt.sign(data, jwtSecretKey)`, il se passe le
 
 - Sinon aussi, vous pouvez utiliser un fetch (**Méthode2**)
 
-
-# Annexe 3 pour la point 3 :
+-------------------
+# Annexe 3 pour le point 3 :
 - Pour tester la validation du token à l'aide d'une requête `GET` (avec `fetch`) en utilisant le token généré par votre endpoint `/user/generateToken`, suivez les étapes suivantes :
 
 ### Étape 1: Générer un token (requête POST)
@@ -203,8 +203,8 @@ validateToken();
 - Cela devrait envoyer une requête `GET` au serveur pour valider le token et afficher le résultat dans la console.
 
 
-
-# Annexe 4 pour la point 3 :
+-------------------
+# Annexe 4 pour le point 3 :
 
 - Pour tester l'API avec l'extension Rest Client de Visual Studio Code, vous pouvez suivre ces étapes :
 
@@ -243,7 +243,8 @@ gfg_token_header_key: Bearer <votre_token>
 
 - Assurez-vous que le serveur Node.js est en cours d'exécution et que les variables d'environnement sont correctement configurées.
 
-# Annexe 5 pour la point 3 :
+-------------------
+# Annexe 5 pour le point 3 :
 
 - Je vais expliquer ici en détail le fonctionnement de la méthode de validation (La méthode `app.get("/user/validateToken", (req, res)`):
 
@@ -316,8 +317,8 @@ Valider le token est crucial pour sécuriser les applications. Le token contient
 
 
 
-
-# Annexe 6 pour la point 3 : Analogie simple :
+-------------------
+# Annexe 6 pour le point 3 : Analogie simple :
 
 ### La Méthode de Validation de JWT dans la Vie Réelle
 Pensez au token JWT comme à un **ticket de cinéma**. Voici comment on peut comparer la validation d'un JWT à un ticket de cinéma :
@@ -342,7 +343,8 @@ Pensez au token JWT comme à un **ticket de cinéma**. Voici comment on peut com
 
 - Cette analogie montre comment la validation d'un token JWT est un moyen de vérifier que l'utilisateur a accès aux ressources autorisées, de la même manière qu'un ticket de cinéma garantit que vous pouvez entrer et voir le film.
 
-# Annexe 7 pour la point 3 : Analogie 2 avec du code :
+-------------------
+# Annexe 7 pour le point 3 : Analogie 2 avec du code :
 
 - Encore des exemples de la vie réelle pour comprendre le code:
 
@@ -401,8 +403,8 @@ Pensez au token JWT comme à un **ticket de cinéma**. Voici comment on peut com
 - **Contrôle d'accès** : Pour vérifier si un utilisateur a le droit d'accéder à une ressource protégée.
 - **Sécurité** : Assure que les ressources sensibles ne sont accessibles qu'à ceux qui sont authentifiés et autorisés.
 
-
-# Annexe 8 pour la point 3 : Faire rapprocher le code à la vie réelle avec utilisation de EMAIL  + PASSWORD :
+-------------------
+# Annexe 8 pour le point 3 : Faire rapprocher le code à la vie réelle avec utilisation de EMAIL  + PASSWORD :
 
 
 ```javascript
@@ -536,8 +538,8 @@ validateToken();
 ```
 - **Analogie** : Pensez à un contrôle de sécurité dans un aéroport. Le personnel demande votre carte d'embarquement (token) pour vérifier que vous avez le droit.
 
-
-# Annexe 9 pour la point 3 : Faire rapprocher le code encore à la vie réelle avec utilisation de EMAIL  + PASSWORD :
+-------------------
+# Annexe 9 pour le point 3 : Faire rapprocher le code encore à la vie réelle avec utilisation de EMAIL  + PASSWORD :
 
 ## code serveur index.js
 
@@ -654,6 +656,7 @@ EMAIL: <votre_token_généré>
 - Remplacez `<votre_token_généré>` par le token réel obtenu à partir de l'endpoint `/user/generateToken`.
 - Cette configuration de test vous aidera à vérifier l'utilisation de l'en-tête `EMAIL` pour la validation des tokens JWT.
 
-# Annexe 10 pour la point 3 : Faire rapprocher le code encore à la vie réelle avec utilisation de EMAIL  + PASSWORD + PAGE HTML et clique bouton :
+-------------------
+# Annexe 10 pour le point 3 : Faire rapprocher le code encore à la vie réelle avec utilisation de EMAIL  + PASSWORD + PAGE HTML et clique bouton :
 - voir le dossier **point3vhtml**
 

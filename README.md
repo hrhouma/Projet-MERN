@@ -12,7 +12,7 @@
    Lisez ensuite `partie2-pratique1-APIS+Jeton.docx`, qui détaille davantage le mécanisme des jetons JWT (le même document `partie1-theorie.md`).
 
 3. **Créer une petite application :**  
-   Mettez la théorie en pratique avec une petite application `Hello JWT`. Suivez les instructions dans [ce tutoriel](https://www.geeksforgeeks.org/jwt-authentication-with-node-js/).
+   Mettez la théorie en pratique avec une petite application `Hello JWT`. Suivez les instructions dans [ce tutoriel](https://www.geeksforgeeks.org/jwt-authentication-with-node-js/). (point3 : https://www.geeksforgeeks.org/jwt-authentication-with-node-js/)
 
 5. **Passer à une application intermédiaire :**  
    Ajoutez MongoDB à votre application pour une gestion plus sophistiquée des JWT. Le tutoriel suivant vous guidera : [Login Authentication with Node.js](https://medium.com/@felixpratama242/login-authentication-with-nodejs-7e56aaa3764a).

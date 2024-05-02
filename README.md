@@ -653,3 +653,7 @@ EMAIL: <votre_token_généré>
 
 - Remplacez `<votre_token_généré>` par le token réel obtenu à partir de l'endpoint `/user/generateToken`.
 - Cette configuration de test vous aidera à vérifier l'utilisation de l'en-tête `EMAIL` pour la validation des tokens JWT.
+
+# Annexe 10 pour la point 3 : Faire rapprocher le code encore à la vie réelle avec utilisation de EMAIL  + PASSWORD + PAGE HTML et clique bouton :
+- voir la page 
+

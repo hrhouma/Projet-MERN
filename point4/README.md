@@ -24,7 +24,7 @@ openssl rand -hex 32
 # Étape 4 - Ouvrir mongoDB compass et créer la base de données et la collection 
 ![image](https://github.com/hrhouma/Projet-MERN/assets/10111526/74cbd073-ccd6-4cbb-a70a-9bb03e446954)
 
-# Étape 5 - Changer les variables d'environnement
+# Étape 5 - Changer les variables d'environnement (dans le .env)
 ```ssh
 JWT_SECRET_KEY = 3d2461dfdbddb42d94a7ad9e32694c90fe89efb166cd3ebfa7243d423a65d396
 DB_URL = mongodb://127.0.0.1:27017

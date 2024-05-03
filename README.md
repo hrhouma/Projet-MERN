@@ -17,13 +17,16 @@
 5. **Passer à une application intermédiaire :**  
    Ajoutez MongoDB à votre application pour une gestion plus sophistiquée des JWT. Le tutoriel suivant vous guidera : [Login Authentication with Node.js](https://medium.com/@felixpratama242/login-authentication-with-nodejs-7e56aaa3764a).
 
-6. **Explorer les rôles :**  
+- https://medium.com/@felixpratama242/login-authentication-with-nodejs-7e56aaa3764a
+- https://github.com/lixx21/NodeJS-login-auth
+
+7. **Explorer les rôles :**  
    Les rôles sont essentiels dans l'authentification JWT. Découvrez leur utilité avec [ce tutoriel](https://dev.to/cyberwolves/jwt-authentication-with-access-tokens-refresh-tokens-in-node-js-5aa9).
 
-7. **Créer une application complète :**  
+8. **Créer une application complète :**  
    Pour une application complète avec JWT, suivez [ce guide](https://medium.com/swlh/authentication-how-to-create-a-nodejs-application-using-jwt-cee8bc5a89fe).
 
-8. **Ressources supplémentaires :**  
+9. **Ressources supplémentaires :**  
    - [Node.js JWT Express.js Tutorial](https://www.digitalocean.com/community/tutorials/nodejs-jwt-expressjs)
    - [Gist: Node.js JWT Example](https://gist.github.com/nurmdrafi/e1c8b9562d906e736ba309bacf816491)
 

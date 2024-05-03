@@ -153,7 +153,13 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJVc2VybmFtZSI6ImNlc
 ### Tester le point de terminaison findUser
 GET http://127.0.0.1:3000/findUser/cesar1996@gmail.com
 ```
+### NOTE: N'oubliez pas l'espace entre 
 
+```http
+Content-Type: application/json
+#ESPACE
+{
+```
 
 # Étape 8 - Chronologie des tests et explications utiles
 

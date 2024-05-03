@@ -1,3 +1,4 @@
+# Tester l'application : 
 - Pour tester les points de terminaison à l'aide d'un client REST, vous pouvez créer un fichier `.http` qui inclut des requêtes séquentielles.
 - Dans le contexte de l'authentification JWT avec des jetons d'accès et de rafraîchissement dans Node.js, vous pouvez suivre cette séquence :
 
@@ -58,3 +59,48 @@ Content-Type: application/json
 3. Ouvrez le fichier dans votre client REST (par exemple, Visual Studio Code avec l'extension REST Client).
 4. Exécutez les requêtes de manière séquentielle pour tester l'API.
 
+# Code test.http complet
+
+Voici votre fichier `.http` complet :
+
+```http
+### Inscription
+POST http://localhost:8080/api/signUp
+Content-Type: application/json
+
+{
+  "userName": "utilisateurtest",
+  "email": "utilisateurtest@example.com",
+  "password": "MotdePasse123!"
+}
+
+### Connexion
+POST http://localhost:8080/api/logIn
+Content-Type: application/json
+
+{
+  "email": "utilisateurtest@example.com",
+  "password": "MotdePasse123!"
+}
+
+### Rafraîchir le jeton
+POST http://localhost:8080/api/refreshToken
+Content-Type: application/json
+
+{
+  "refreshToken": "votre-refresh-token"
+}
+
+### Déconnexion
+DELETE http://localhost:8080/api/refreshToken
+Content-Type: application/json
+
+{
+  "refreshToken": "votre-refresh-token"
+}
+```
+
+1. Remplacez les URL et les jetons par les valeurs correctes.
+2. Sauvegardez ce code dans un fichier `.http`.
+3. Ouvrez le fichier dans un éditeur supportant les requêtes HTTP (comme Visual Studio Code avec l'extension REST Client).
+4. Exécutez les requêtes séquentiellement pour tester les points de terminaison.

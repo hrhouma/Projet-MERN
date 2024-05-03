@@ -35,6 +35,17 @@ DB_NAME = jwtdemo
 # Étape 6 - Testez
 ### `test.http`
 ```http
+
+### Tester le point de terminaison /register
+POST http://127.0.0.1:3000/register
+Content-Type: application/json
+
+{
+    "username": "votre nom d'utilisateur",
+    "email": "votre email",
+    "password": "votre mot de passe"
+}
+
 ### Tester le point de terminaison /login
 POST http://127.0.0.1:3000/login
 Content-Type: application/json
@@ -48,21 +59,12 @@ Content-Type: application/json
 GET http://127.0.0.1:3000/authenticate
 Authorization: Bearer <VOTRE_JETON>
 
-### Tester le point de terminaison /register
-POST http://127.0.0.1:3000/register
-Content-Type: application/json
-
-{
-    "username": "votre nom d'utilisateur",
-    "email": "votre email",
-    "password": "votre mot de passe"
-}
 
 ### Tester le point de terminaison findUser
 GET http://127.0.0.1:3000/findUser/<votre email>
 ```
 
-Remplacez `<VOTRE_JETON>` et `<votre email>` par les valeurs appropriées.
+- Remplacez `<VOTRE_JETON>` et `<votre email>` par les valeurs appropriées.
 
 ### `script.js`
 Pour compléter le fichier `.http`, voici un fichier de script `script.js` pour automatiser l'interaction avec ces points de terminaison :
@@ -119,3 +121,35 @@ const trouverUtilisateur = async (email) => {
 ```
 
 - Remplacez `'votre nom d'utilisateur'`, `'votre email'`, et `'votre mot de passe'` par les valeurs appropriées.
+
+# Étape 7 - Exemple
+
+```http
+### Tester le point de terminaison /register
+POST http://127.0.0.1:3000/register
+Content-Type: application/json
+
+{
+    "username": "cesar123",
+    "email": "cesar1996@gmail.com",
+    "password": "mdp123"
+}
+
+### Tester le point de terminaison /login
+POST http://127.0.0.1:3000/login
+Content-Type: application/json
+
+{
+    "email": "cesar1996@gmail.com",
+    "password": "mdp123"
+}
+
+### Tester le point de terminaison /authenticate
+GET http://127.0.0.1:3000/authenticate
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJVc2VybmFtZSI6ImNlc2FyMTIzIiwiRW1haWwiOiJjZXNhcjE5OTZAZ21haWwuY29tIiwiaWF0IjoxNzE0NzU1MTIwLCJleHAiOjE3MTQ3NTg3MjB9.uGr5nHQq0QQ8wKv4OX0DxjbZ4Owa8hFn9NeDmmS7y2s
+
+
+
+### Tester le point de terminaison findUser
+GET http://127.0.0.1:3000/findUser/cesar1996@gmail.com
+```

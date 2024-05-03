@@ -3,6 +3,36 @@
 - https://github.com/lixx21/NodeJS-login-auth
 - Voici un exemple du fichier `.http` pour interagir avec les points de terminaison (endpoints) en français :
 
+# Étape 1 - Télécharger le projet et l'ouvrir avec VSCode
+```ssh
+git clone https://github.com/lixx21/NodeJS-login-auth.git
+```
+
+# Étape 2 - Installer les dépedenecs avec npm install
+```ssh
+npm install
+ou
+npm i bcrypt, jsonwebtoken, mongodb, express, dotenv
+```
+
+# Étape 3 - Générer un mot de passe
+```ssh
+openssl rand -hex 32
+```
+- Il faut l'éxécuter sur un terminal linux et non pas avec Powershell.
+  
+# Étape 4 - Ouvrir mongoDB compass et créer la base de données et la collection 
+![image](https://github.com/hrhouma/Projet-MERN/assets/10111526/74cbd073-ccd6-4cbb-a70a-9bb03e446954)
+
+# Étape 5 - Changer les variables d'environnement
+```ssh
+JWT_SECRET_KEY = 3d2461dfdbddb42d94a7ad9e32694c90fe89efb166cd3ebfa7243d423a65d396
+DB_URL = mongodb://127.0.0.1:27017
+DB_COLLECTION_NAME = c1
+DB_NAME = jwtdemo
+```
+
+# Étape 6 - Testez
 ### `test.http`
 ```http
 ### Tester le point de terminaison /login

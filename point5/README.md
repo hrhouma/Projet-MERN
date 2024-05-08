@@ -33,7 +33,7 @@ REFRESH_TOKEN_PRIVATE_KEY = Add your private key
 - Juste pour la démo, j'ai généré des tokens pour l'inscription mais on ne devrait pas ! Les tokens sont générés uniquement lors de l'authentifaction (comme un laisser-passer). Sinon un refresh token est ajouté pour des raisons de sécurité.
 -  Dans la partie suivante. nous allons ajouter des rôles ! (code p54.zip) 
 
-# Partie 5.4 - Application avec les rôles ( Ajout d'un drop-down menu + affichage du rôle dans la page)
+# Partie 5.4 - Application avec les rôles ( Ajout d'un drop-down menu avec 3 rôles + affichage du rôle choisi dans la page)
 
 # Partie 5.5 -
 

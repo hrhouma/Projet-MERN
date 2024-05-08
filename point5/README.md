@@ -23,12 +23,15 @@ REFRESH_TOKEN_PRIVATE_KEY = Add your private key
 
 # Partie 5.3 - Testez l'application avec une interface graphique en React
 
-- cloner l'application p53.zip sur votre poste local
-- code .
-- npm install
-- npm start
-- 
-- 
+- Cloner l'application p53.zip sur votre poste local
+- Saisir code .
+- Ouvrir deux terminaux dans VScode un pour le backend (cd backend) et un pour le frontend (cd frontend).
+- Terminal 1: cd backend et npm install, aussi pour le Terminal 2 : cd frontend et npm install
+- Démarrer les serveurs pour le backend (node server.js) et pour le frontend (npm start)
+- Points de terminaison : on a besoin juste du frontend : http://127.0.0.1:3000 (pour le déboguage + dev le point de terminaison frontend est important http://127.0.0.1:8080 (regardez test.http pour toutes les routes bachend)
+- Amusez vous à créer des utilisateurs
+- Juste pour la démo, j'ai généré des tokens pour l'inscription mais on ne devrait pas ! Les tokens sont générés uniquement lors de l'authentifaction (comme un laisser-passer). Sinon un refresh token est ajouté pour des raisons de sécurité.
+-  Dans la partie suivante. nous allons ajouter des rôles ! (code p54.zip) 
 # Partie 5.4 -
 
 # Partie 5.5 -

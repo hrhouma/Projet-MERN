@@ -35,6 +35,17 @@ REFRESH_TOKEN_PRIVATE_KEY = Add your private key
 
 # Partie 5.4 - Application avec les rôles ( Ajout d'un drop-down menu avec 3 rôles + affichage du rôle choisi dans la page)
 
+- Cloner l'application p54.zip sur votre poste local
+- Saisir code .
+- Ouvrir deux terminaux dans VScode un pour le backend (cd backend) et un pour le frontend (cd frontend).
+- Terminal 1: cd backend et npm install, aussi pour le Terminal 2 : cd frontend et npm install
+- Démarrer les serveurs pour le backend (node server.js) et pour le frontend (npm start)
+- Points de terminaison : on a besoin juste du frontend : http://127.0.0.1:3000 (pour le déboguage + dev le point de terminaison backend est important http://127.0.0.1:8080 (regardez test.http pour toutes les routes bachend)
+- Remarquez que nous avons la possibilité de choisir le rôle au moment de la création de l'utilisateur !
+- Amusez vous à créer des utilisateurs **AVEC des RôLES**
+-  Dans la partie suivante, nous allons ajouter des interfaces qui apparaîtront en fonction de votre  rôle ! (code p55.zip) , par exemple une interaface super-admin !
+
+
 # Partie 5.5 -
 
 # Partie 5.6 - Exercice

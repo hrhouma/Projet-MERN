@@ -6,11 +6,12 @@
 ### 1 - Vérifiez que vous avez mongodb.
 ### 2 - Ouvrir VScoe et ajoutez le fichier .env avec les informations suivantes: 
 
+```ssh
 DB = mongodb://127.0.0.1:27017
 SALT = 10
 ACCESS_TOKEN_PRIVATE_KEY = Add your private key
 REFRESH_TOKEN_PRIVATE_KEY = Add your private key
-
+```
 ### 3 - npm install
 ### 4 - npm start
 ### 5 - Testez les points de terminaisons avec notre client test.http

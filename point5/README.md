@@ -46,7 +46,7 @@ REFRESH_TOKEN_PRIVATE_KEY = Add your private key
 -  Dans la partie suivante, nous allons ajouter des interfaces qui apparaîtront en fonction de votre  rôle ! (code p55.zip) , par exemple une interaface super-admin !
 
 
-# Partie 5.5 (Draft) -
+# Partie 5.5 (Draft) - (p55draft.zip)
 
 # Partie 5.5 -
 
@@ -57,7 +57,7 @@ REFRESH_TOKEN_PRIVATE_KEY = Add your private key
 - 1 seule page sera visible pour l'utilisateur normal.
 
 
-# Annexe : Problème entre 5.5 draft - 5.5
+# Annexe #1: Problème entre (p55draft.zip) - 5.5 (p55final.zip)
 
 ## 1 - Contexte
 Lors de l'implémentation des fonctionnalités d'authentification pour une application Web, nous avons rencontré un problème concernant la génération et la transmission des jetons (tokens) d'authentification JWT (JSON Web Tokens) lors des processus de connexion et d'inscription des utilisateurs.
@@ -73,3 +73,120 @@ Pour résoudre ce problème, nous avons ajusté la route `/logIn` pour utiliser 
 
 ## 5 - Impact
 Cette correction a permis de garantir la fiabilité du processus de connexion, en assurant que chaque utilisateur reçoit correctement ses tokens d'accès et de rafraîchissement après une authentification réussie, facilitant ainsi une gestion sécurisée des sessions utilisateur dans l'application.
+
+
+# Annexe #2 (suite 2) : Problème entre (p55draft.zip) - 5.5 (p55final.zip)
+- Voici une explication détaillée des modifications apportées et pourquoi le code original pouvait poser problème :
+
+## 1 - Modifications Clés
+
+1. **Ajout de Logs de Débogage:**
+   - **Pourquoi ?** Ajouter des logs dans la fonction `generateTokens` et juste après les appels à cette fonction dans les routes `/signUp` et `/logIn` vous aide à suivre le flux des données et à identifier où exactement les choses ne fonctionnent pas comme prévu.
+   - **Impact :** Cela permet de vérifier si les tokens sont correctement générés et inclus dans la réponse de l'API, facilitant l'identification rapide des problèmes.
+
+2. **Gestion des Erreurs dans `generateTokens`:**
+   - **Pourquoi ?** La gestion des erreurs a été renforcée pour attraper et retourner les erreurs de manière plus explicite lors de la génération des tokens.
+   - **Impact :** Si une erreur survient lors de la génération des tokens, elle est maintenant correctement enregistrée et traitée, empêchant les réponses silencieuses qui pourraient laisser les développeurs sans indice sur ce qui s'est mal passé.
+
+3. **Validation des Tokens dans les Réponses de l'API:**
+   - **Pourquoi ?** Avant de renvoyer la réponse, nous ajoutons une vérification pour s'assurer que les tokens `accessToken` et `refreshToken` existent après leur génération.
+   - **Impact :** Cela empêche d'envoyer une réponse réussie sans tokens, ce qui peut confondre le frontend qui attend ces tokens pour les opérations de suivi.
+
+## 2 - Problèmes Potentiels dans l'Ancien Code
+
+- **Génération de Tokens Échoue Silencieusement:** Si les clés privées pour JWT ne sont pas configurées correctement ou si un autre problème survient dans `jwt.sign`, l'ancien code ne capturait pas ces erreurs explicitement. Cela pouvait conduire à une situation où aucune erreur n'est visible dans vos logs, mais les tokens ne sont pas générés.
+
+- **Problèmes de Contexte Asynchrone:** L'utilisation des tokens immédiatement après un appel asynchrone sans s'assurer qu'ils ont été correctement définis peut entraîner des erreurs silencieuses. Dans l'ancien code, s'il y avait un retard ou une faute dans la génération des tokens, les contrôleurs n'en tenaient pas compte.
+
+- **Manque de Feedback sur les Erreurs:** Sans logs appropriés ou gestion des erreurs dans la fonction `generateTokens`, il est difficile de diagnostiquer des problèmes spécifiques lors de la génération de tokens, comme des clés incorrectes ou des problèmes avec la base de données.
+
+### Conclusion
+
+Les modifications apportées visent à rendre le code plus robuste et transparent en ce qui concerne la gestion des erreurs et le suivi du flux de traitement des données. Cela permet non seulement de résoudre le problème actuel mais aussi de faciliter la maintenance et le débogage futurs du système.
+
+
+
+# Annexe #3 (suite 3) : Problème entre (p55draft.zip) - 5.5 (p55final.zip)
+
+- Voici une représentation simplifiée de la comparaison des modifications apportées au code du backend, similaire à ce que vous pourriez voir dans une interface de comparaison de code comme GitHub :
+
+## 3.1 - Fonction `generateTokens`
+**Avant :**
+```javascript
+const generateTokens = async (user) => {
+    const payload = { _id: user._id, roles: user.roles };
+    const accessToken = jwt.sign(
+        payload,
+        process.env.ACCESS_TOKEN_PRIVATE_KEY,
+        { expiresIn: "14m" }
+    );
+    const refreshToken = jwt.sign(
+        payload,
+        process.env.REFRESH_TOKEN_PRIVATE_KEY,
+        { expiresIn: "30d" }
+    );
+    return { accessToken, refreshToken };
+};
+```
+
+**Après :**
+```javascript
+const generateTokens = async (user) => {
+    try {
+        const payload = { _id: user._id, roles: user.roles };
+        const accessToken = jwt.sign(
+            payload,
+            process.env.ACCESS_TOKEN_PRIVATE_KEY,
+            { expiresIn: "14m" }
+        );
+        const refreshToken = jwt.sign(
+            payload,
+            process.env.REFRESH_TOKEN_PRIVATE_KEY,
+            { expiresIn: "30d" }
+        );
+        return Promise.resolve({ accessToken, refreshToken });
+    } catch (err) {
+        return Promise.reject(err);
+    }
+};
+```
+**Changements :**
+- Ajout d'un bloc `try-catch` pour capturer et retourner les erreurs qui peuvent survenir lors de la génération des tokens.
+
+## 3.2 - Route `/logIn`
+**Avant :**
+```javascript
+router.post("/logIn", async (req, res) => {
+    const user = await User.findOne({ email: req.body.email });
+    if (!user) {
+        return res.status(401).json({ error: true, message: "Invalid email or password" });
+    }
+    const { accessToken, refreshToken } = generateTokens(user);
+    res.json({ accessToken, refreshToken, user: user.roles });
+});
+```
+
+**Après :**
+```javascript
+router.post("/logIn", async (req, res) => {
+    const user = await User.findOne({ email: req.body.email });
+    if (!user) {
+        return res.status(401).json({ error: true, message: "Invalid email or password" });
+    }
+    const { accessToken, refreshToken } = await generateTokens(user);
+    res.status(200).json({
+        error: false,
+        accessToken,
+        refreshToken,
+        user: {
+            roles: user.roles // Assurez-vous que les rôles sont bien renvoyés ici
+        },
+        message: "Logged in successfully"
+    });
+});
+```
+**Changements :**
+- Utilisation de `await` avec `generateTokens` pour s'assurer que les tokens sont générés avant de les envoyer en réponse.
+- Ajout de gestion de statut et de structure de réponse pour clarifier le résultat et l'état de la requête.
+
+- Ces modifications permettent de s'assurer que les tokens sont correctement générés et que les erreurs sont gérées de manière appropriée, rendant le code plus robuste et fiable.

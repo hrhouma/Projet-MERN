@@ -190,3 +190,16 @@ router.post("/logIn", async (req, res) => {
 - Ajout de gestion de statut et de structure de réponse pour clarifier le résultat et l'état de la requête.
 
 - Ces modifications permettent de s'assurer que les tokens sont correctement générés et que les erreurs sont gérées de manière appropriée, rendant le code plus robuste et fiable.
+
+# Annexe #4 (suite 4) : RÉSUMÉ problème entre (p55draft.zip) - 5.5 (p55final.zip)
+- Les changements effectués pour résoudre le problème de la non-réception des tokens JWT lors de la connexion sont les suivants :
+
+1. **Utilisation de `await` avec `generateTokens`** :
+   - **Avant** : Les tokens étaient générés sans attendre que la fonction `generateTokens` termine, ce qui entraînait une réponse sans les tokens.
+   - **Après** : Ajout de `await` pour s'assurer que la fonction `generateTokens` complète son exécution avant de continuer, garantissant que les tokens sont inclus dans la réponse envoyée au client.
+
+2. **Gestion d'erreur améliorée** :
+   - **Avant** : Les erreurs potentielles dans la génération des tokens n’étaient pas correctement gérées, ce qui pouvait mener à des réponses incohérentes en cas d'erreur.
+   - **Après** : Implémentation d'un bloc de gestion d'erreurs plus robuste autour de la fonction `generateTokens` pour capturer et répondre correctement en cas d'échec de la génération des tokens.
+
+- Ces modifications ont assuré la fiabilité de la génération des tokens et leur inclusion systématique dans les réponses de l'API lors des connexions réussies.

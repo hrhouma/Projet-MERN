@@ -51,7 +51,8 @@ observer dans la base de données haythem par exemple dans haythem/activities ou
 si vous changez de base de données ou que vous retestez avec dé,autres paramètres dans le .env il faut effacer la session (session storage)
 Pour ce faire nettoyez l'historique de 1h du navigateur 
 ```
-
+# Étape 7 - Analysez !!!
+- analysez controllers/auth.controller.js et middlelware/auth.js
 
 # Démo : Productivity-app + extension CI/CD
 

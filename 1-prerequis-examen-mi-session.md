@@ -221,35 +221,44 @@ const handleSubmit = async (e) => {
 
 Dans le composant React fourni, le hook `useState` est utilisé pour gérer l'état du formulaire. Supposons que vous voulez exécuter une certaine logique chaque fois que l'état du formulaire change. Quel hook React utiliseriez-vous pour cela ?
 
-A. `useEffect`
-B. `useState`
-C. `useReducer`
-D. `useContext`
+- A. `useEffect`
+- B. `useState`
+- C. `useReducer`
+- D. `useContext`
 
 #### Question 7: JWT - Refresh Tokens
 
 Dans le code fourni, un JWT est généré lors de l'enregistrement d'un utilisateur. Supposons que vous voulez implémenter une fonctionnalité de rafraîchissement du token pour améliorer la sécurité. Comment fonctionnent les tokens de rafraîchissement et comment les implémenteriez-vous ?
 
-A. Les tokens de rafraîchissement sont utilisés pour stocker les données de l'utilisateur dans le navigateur
-B. Les tokens de rafraîchissement sont utilisés pour rafraîchir la page du navigateur
-C. Les tokens de rafraîchissement sont des tokens à longue durée de vie qui peuvent être utilisés pour obtenir de nouveaux tokens d'accès
-D. Les tokens de rafraîchissement sont des tokens qui sont générés à chaque requête pour améliorer la performance
+- A. Les tokens de rafraîchissement sont utilisés pour stocker les données de l'utilisateur dans le navigateur
+- B. Les tokens de rafraîchissement sont utilisés pour rafraîchir la page du navigateur
+- C. Les tokens de rafraîchissement sont des tokens à longue durée de vie qui peuvent être utilisés pour obtenir de nouveaux tokens d'accès
+- D. Les tokens de rafraîchissement sont des tokens qui sont générés à chaque requête pour améliorer la performance
 
 #### Question 8: React Router - Protected Routes
 
 Dans le code React fourni, plusieurs routes sont définies à l'aide de `react-router-dom`. Supposons que vous voulez ajouter une route protégée qui n'est accessible qu'aux utilisateurs authentifiés. Comment implémenteriez-vous cela ?
 
-A. En utilisant le hook `useAuth`
-B. En utilisant le hook `useProtectedRoute`
-C. En créant un composant de route protégée qui vérifie si l'utilisateur est authentifié avant de rendre le composant
-D. En utilisant le hook `useRoute`
+- A. En utilisant le hook `useAuth`
+- B. En utilisant le hook `useProtectedRoute`
+- C. En créant un composant de route protégée qui vérifie si l'utilisateur est authentifié avant de rendre le composant
+- D. En utilisant le hook `useRoute`
 
 #### Question 9: localStorage - Security
 
 Dans le code fourni, les données du formulaire sont stockées dans le localStorage du navigateur. Quels sont les problèmes de sécurité potentiels avec l'utilisation du localStorage pour stocker des données sensibles et comment les atténueriez-vous ?
 
-A. Le localStorage n'a pas de problèmes de sécurité
-B. Les données dans le localStorage peuvent être volées par des scripts malveillants, donc il faut toujours crypter les données sensibles
-C. Le localStorage est vulnérable aux attaques CSRF, donc il faut toujours utiliser des tokens CSRF
-D. Le localStorage est vulnérable aux attaques XSS, donc il faut toujours désactiver JavaScript
+- A. Le localStorage n'a pas de problèmes de sécurité
+- B. Les données dans le localStorage peuvent être volées par des scripts malveillants, donc il faut toujours crypter les données sensibles
+- C. Le localStorage est vulnérable aux attaques CSRF, donc il faut toujours utiliser des tokens CSRF
+- D. Le localStorage est vulnérable aux attaques XSS, donc il faut toujours désactiver JavaScript
+
+#### Question 10: JWT - Refresh Tokens in Real Life
+
+Dans le monde réel, les tokens de rafraîchissement sont souvent utilisés en conjonction avec les tokens d'accès pour maintenir la sécurité tout en offrant une bonne expérience utilisateur. Pouvez-vous expliquer comment cela fonctionne et pourquoi c'est important ?
+
+- A. Les tokens de rafraîchissement sont utilisés pour prolonger la session de l'utilisateur sans lui demander de se reconnecter, ce qui améliore l'expérience utilisateur tout en maintenant la sécurité.
+- B. Les tokens de rafraîchissement sont utilisés pour stocker les données de l'utilisateur dans le navigateur, ce qui permet de maintenir l'état de la session.
+- C. Les tokens de rafraîchissement sont utilisés pour crypter les données de l'utilisateur, ce qui améliore la sécurité.
+- D. Les tokens de rafraîchissement sont utilisés pour suivre les activités de l'utilisateur sur le site, ce qui permet d'améliorer l'expérience utilisateur. 
 

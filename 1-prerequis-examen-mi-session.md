@@ -244,7 +244,7 @@ Dans le code React fourni, plusieurs routes sont définies à l'aide de `react-r
 - C. En créant un composant de route protégée qui vérifie si l'utilisateur est authentifié avant de rendre le composant
 - D. En utilisant le hook `useRoute`
 
-#### Question 9: localStorage - Security
+#### Question 9: localStorage - sécurité (Security)
 
 Dans le code fourni, les données du formulaire sont stockées dans le localStorage du navigateur. Quels sont les problèmes de sécurité potentiels avec l'utilisation du localStorage pour stocker des données sensibles et comment les atténueriez-vous ?
 
@@ -253,7 +253,7 @@ Dans le code fourni, les données du formulaire sont stockées dans le localStor
 - C. Le localStorage est vulnérable aux attaques CSRF, donc il faut toujours utiliser des tokens CSRF
 - D. Le localStorage est vulnérable aux attaques XSS, donc il faut toujours désactiver JavaScript
 
-#### Question 10: JWT - Refresh Tokens in Real Life
+#### Question 10: JWT - Refresh Tokens dans la vie rééelle (in Real Life)
 
 Dans le monde réel, les tokens de rafraîchissement sont souvent utilisés en conjonction avec les tokens d'accès pour maintenir la sécurité tout en offrant une bonne expérience utilisateur. Pouvez-vous expliquer comment cela fonctionne et pourquoi c'est important ?
 

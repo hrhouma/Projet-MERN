@@ -35,5 +35,4 @@
    - Assurez-vous que le backend interagit correctement avec le frontend sans nécessiter de modifications majeures de l'interface utilisateur.
    - Testez toutes les fonctionnalités pour confirmer qu'elles répondent aux attentes de l'examen.
 
-**Rendu :**
-   - Votre code complet, incluant les ajustements du frontend pour l'intégration du backend et le code du backend, doit être soumis en suivant les directives de votre instructeur.
+

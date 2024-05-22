@@ -1,4 +1,4 @@
-**Partie 2 de l'examen : Développement d'une Application React avec Formulaires Dynamiques**
+# Partie 2 de l'examen : Développement d'une Application React avec Formulaires Dynamiques**
 
 **Objectif :** Vous devez créer une application React contenant deux routes spécifiques : `/inscription` et `/merci/{name}`.
 
@@ -21,6 +21,5 @@
 **Consignes pour l'interface utilisateur :**
    - L'interface doit être esthétique et moderne. Vous devez utiliser l'une des bibliothèques suivantes pour styliser votre application : Bootstrap, Semantic UI, Bulma ou Material UI.
 
-**Rendu :**
-   - Assurez-vous que toutes les fonctionnalités sont correctement implémentées et testées avant la soumission.
+
 

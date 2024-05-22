@@ -1,4 +1,4 @@
-# Partie 3 de l'examen : Intégration d'un Backend MongoDB avec votre Application React**
+# Partie 3 de l'examen : Intégration d'un Backend MongoDB avec votre Application React
 
 **Objectif :** Ajoutez un backend utilisant MongoDB à votre application React pour gérer les données du formulaire d'inscription. Vous avez la liberté de choisir la méthode la plus appropriée pour gérer les sessions utilisateurs après l'inscription.
 

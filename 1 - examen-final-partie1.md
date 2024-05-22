@@ -148,6 +148,10 @@ app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
 - B. Elle signe les données utilisateur avec une clé secrète pour générer un JWT
 - C. Elle enregistre les données utilisateur dans la base de données
 - D. Elle crypte les données utilisateur
+- E. Elle décode un JWT pour vérifier son contenu
+- F. Elle génère une clé secrète pour le token
+- G. Elle configure les en-têtes de la requête
+- H. Elle définit la durée de validité du JWT
 
 #### Question 4: React Router
 

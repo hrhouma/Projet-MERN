@@ -2,7 +2,7 @@
 
 #### Question 1: Node.js - Express
 
-Complétez le code pour créer un serveur Express qui écoute sur le port 5000 et possède une route `POST /api/register` pour enregistrer un utilisateur :
+## 1.1. Expliquez ce code :
 
 ```javascript
 const express = require('express');
@@ -27,15 +27,25 @@ const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
 ```
 
-Quel est le rôle de `bodyParser.json()` dans ce code ?
+## 1.2. Quel est le rôle de `bodyParser.json()` dans ce code ?
+
 - A. Convertir les données de la requête en format JSON
 - B. Gérer les erreurs de la requête
 - C. Générer un JWT
 - D. Stocker les données dans le tableau `users`
 
+## 1.3.  Express Middleware
+
+Dans le code Express fourni, un middleware est utilisé pour analyser le corps de la requête. Qu'est-ce qu'un middleware dans le contexte d'Express.js et comment fonctionne-t-il ?
+
+A. Un middleware est une fonction qui prend en charge les erreurs dans Express.js
+B. Un middleware est une fonction qui est invoquée par le routeur Express.js avant d'atteindre la route finale
+C. Un middleware est une bibliothèque pour gérer les bases de données dans Express.js
+D. Un middleware est une fonction qui génère des vues dans Express.js
+
 #### Question 2: React - useState
 
-Complétez le code pour gérer les données de formulaire dans un composant React :
+## 2.1. Expliquez ce code :
 
 ```jsx
 import React, { useState } from 'react';
@@ -100,8 +110,7 @@ const Inscription = () => {
 
 export default Inscription;
 ```
-
-Quel hook React est utilisé pour gérer l'état du formulaire ?
+## 2.2. Quel hook React est utilisé pour gérer l'état du formulaire ?
 - A. `useEffect`
 - B. `useState`
 - C. `useReducer`
@@ -109,7 +118,7 @@ Quel hook React est utilisé pour gérer l'état du formulaire ?
 
 #### Question 3: JWT
 
-Complétez le code pour générer un JWT lors de l'enregistrement d'un utilisateur :
+## 3.1. Expliquez ce code : 
 
 ```javascript
 const express = require('express');
@@ -134,7 +143,7 @@ const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
 ```
 
-Que fait la fonction `jwt.sign()` ?
+## 3.2. Que fait la fonction `jwt.sign()` ?
 - A. Elle vérifie la validité du token
 - B. Elle signe les données utilisateur avec une clé secrète pour générer un JWT
 - C. Elle enregistre les données utilisateur dans la base de données
@@ -142,7 +151,8 @@ Que fait la fonction `jwt.sign()` ?
 
 #### Question 4: React Router
 
-Complétez le code pour configurer les routes dans un composant React :
+
+## 4.1. Expliquez ce code : 
 
 ```jsx
 import React from 'react';
@@ -168,7 +178,7 @@ function App() {
 export default App;
 ```
 
-Quel composant de `react-router-dom` est utilisé pour définir les routes dans l'application ?
+## 4.2. Quel composant de `react-router-dom` est utilisé pour définir les routes dans l'application ?
 - A. `Link`
 - B. `Route`
 - C. `Switch`
@@ -176,7 +186,7 @@ Quel composant de `react-router-dom` est utilisé pour définir les routes dans 
 
 #### Question 5: Utilisation de localStorage
 
-Complétez le code pour stocker les données du formulaire dans le localStorage :
+## 5.1. Expliquez ce code : 
 
 ```javascript
 const handleSubmit = async (e) => {
@@ -197,12 +207,49 @@ const handleSubmit = async (e) => {
 };
 ```
 
-Quel est le but de `localStorage.setItem('formData', JSON.stringify(formData));` ?
+## 5.2. Quel est le but de `localStorage.setItem('formData', JSON.stringify(formData));` ?
 - A. Envoyer les données du formulaire au backend
 - B. Stocker les données du formulaire dans le localStorage du navigateur
 - C. Afficher les données du formulaire à l'écran
 - D. Valider les données du formulaire
 
----
 
-Ce quiz couvre les concepts de Node.js, npm, Express, JWT, React, useState, React Router et localStorage, tout en étant basé sur l'énoncé du projet donné.
+
+
+
+#### Question 6: React - useEffect
+
+Dans le composant React fourni, le hook `useState` est utilisé pour gérer l'état du formulaire. Supposons que vous voulez exécuter une certaine logique chaque fois que l'état du formulaire change. Quel hook React utiliseriez-vous pour cela ?
+
+A. `useEffect`
+B. `useState`
+C. `useReducer`
+D. `useContext`
+
+#### Question 7: JWT - Refresh Tokens
+
+Dans le code fourni, un JWT est généré lors de l'enregistrement d'un utilisateur. Supposons que vous voulez implémenter une fonctionnalité de rafraîchissement du token pour améliorer la sécurité. Comment fonctionnent les tokens de rafraîchissement et comment les implémenteriez-vous ?
+
+A. Les tokens de rafraîchissement sont utilisés pour stocker les données de l'utilisateur dans le navigateur
+B. Les tokens de rafraîchissement sont utilisés pour rafraîchir la page du navigateur
+C. Les tokens de rafraîchissement sont des tokens à longue durée de vie qui peuvent être utilisés pour obtenir de nouveaux tokens d'accès
+D. Les tokens de rafraîchissement sont des tokens qui sont générés à chaque requête pour améliorer la performance
+
+#### Question 8: React Router - Protected Routes
+
+Dans le code React fourni, plusieurs routes sont définies à l'aide de `react-router-dom`. Supposons que vous voulez ajouter une route protégée qui n'est accessible qu'aux utilisateurs authentifiés. Comment implémenteriez-vous cela ?
+
+A. En utilisant le hook `useAuth`
+B. En utilisant le hook `useProtectedRoute`
+C. En créant un composant de route protégée qui vérifie si l'utilisateur est authentifié avant de rendre le composant
+D. En utilisant le hook `useRoute`
+
+#### Question 9: localStorage - Security
+
+Dans le code fourni, les données du formulaire sont stockées dans le localStorage du navigateur. Quels sont les problèmes de sécurité potentiels avec l'utilisation du localStorage pour stocker des données sensibles et comment les atténueriez-vous ?
+
+A. Le localStorage n'a pas de problèmes de sécurité
+B. Les données dans le localStorage peuvent être volées par des scripts malveillants, donc il faut toujours crypter les données sensibles
+C. Le localStorage est vulnérable aux attaques CSRF, donc il faut toujours utiliser des tokens CSRF
+D. Le localStorage est vulnérable aux attaques XSS, donc il faut toujours désactiver JavaScript
+

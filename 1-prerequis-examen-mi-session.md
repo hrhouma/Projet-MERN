@@ -1,84 +1,208 @@
-# Tutorial: Gestion des Utilisateurs avec Node.js, Express, et MongoDB
+### Quiz pour les étudiants
 
-## Objectif : 
-- Ce tutorial guide à travers les étapes de création d'une application utilisant Node.js et MongoDB pour la gestion des utilisateurs, incluant la création de routes avec Express, la gestion des erreurs, et l'utilisation des variables d'environnement.
-- Nous allons détailler chaque étape de la création d'une application Node.js avec Express et MongoDB, en expliquant les concepts clés et en fournissant des exemples de code pour mieux comprendre la mise en place d'un système de gestion des utilisateurs robuste. 
-- Vous pouvez continuer à ajouter des fonctionnalités ou ajuster le tutorial selon les besoins spécifiques de votre projet ou de votre cours.
+#### Question 1: Node.js - Express
 
-## Prérequis
-
-- Node.js installé
-- MongoDB installé et en cours d'exécution
-- Connaissances de base de JavaScript et des requêtes HTTP
-
-## Étape 1: Configuration initiale
-
-Installez les packages nécessaires en utilisant npm :
-
-```bash
-npm install express mongoose dotenv
-```
-
-Créez un fichier `.env` à la racine de votre projet pour stocker des variables sensibles telles que la chaîne de connexion à MongoDB :
-
-```plaintext
-DB_URI=mongodb://localhost:27017/maBaseDeDonnees
-```
-
-Dans votre fichier principal de l'application, ajoutez le code suivant pour configurer l'environnement :
-
-```javascript
-require('dotenv').config();
-const mongoose = require('mongoose');
-mongoose.connect(process.env.DB_URI, { useNewUrlParser: true, useUnifiedTopology: true })
-  .then(() => console.log('Connexion à MongoDB réussie via variable d'environnement !'))
-  .catch((err) => console.log('Connexion à MongoDB échouée !', err));
-```
-
-## Étape 2: Création d'une Route pour Ajouter des Utilisateurs
-
-Utilisez Express pour créer une API permettant d'ajouter des utilisateurs à la base de données :
+Complétez le code pour créer un serveur Express qui écoute sur le port 5000 et possède une route `POST /api/register` pour enregistrer un utilisateur :
 
 ```javascript
 const express = require('express');
+const bodyParser = require('body-parser');
+const jwt = require('jsonwebtoken');
 const app = express();
-const User = require('./models/user'); // Assurez-vous que le chemin est correct
+const users = [];
 
-app.use(express.json());
+const JWT_SECRET = 'your_jwt_secret';
 
-app.post('/users', async (req, res) => {
-  try {
-    const user = new User(req.body);
-    await user.save();
-    res.status(201).send(user);
-  } catch (error) {
-    res.status(400).send(error);
-  }
+app.use(bodyParser.json());
+
+app.post('/api/register', (req, res) => {
+  const { first_name, last_name, email, phone_number, street_address, post_code, country } = req.body;
+  const user = { first_name, last_name, email, phone_number, street_address, post_code, country };
+  users.push(user);
+  const token = jwt.sign({ email: user.email }, JWT_SECRET, { expiresIn: '1h' });
+  res.status(201).json({ message: 'User registered successfully', token });
 });
 
-app.listen(3000, () => console.log('Serveur démarré sur le port 3000'));
+const PORT = process.env.PORT || 5000;
+app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
 ```
 
-## Étape 3: Pourquoi Utiliser Mongoose?
+Quel est le rôle de `bodyParser.json()` dans ce code ?
+- A. Convertir les données de la requête en format JSON
+- B. Gérer les erreurs de la requête
+- C. Générer un JWT
+- D. Stocker les données dans le tableau `users`
 
-Mongoose est un ODM (Object Data Modeling) qui facilite les interactions avec MongoDB grâce à :
+#### Question 2: React - useState
 
-- **Une interface de requêtes plus simple et structurée** : Mongoose permet de définir des modèles selon le schéma de la base de données, rendant les opérations CRUD plus intuitives.
-- Validation des données : Mongoose offre des fonctionnalités de validation pour assurer que les données entrantes respectent le schéma défini.
+Complétez le code pour gérer les données de formulaire dans un composant React :
 
-## Étape 4: Gestion Globale des Erreurs
+```jsx
+import React, { useState } from 'react';
+import { useHistory } from 'react-router-dom';
 
-Pour éviter de répéter le code de gestion des erreurs dans chaque route, utilisez un middleware d'erreur :
+const Inscription = () => {
+  const history = useHistory();
+  const [formData, setFormData] = useState({
+    first_name: '',
+    last_name: '',
+    email: '',
+    phone_number: '',
+    street_address: '',
+    post_code: '',
+    country: 'CA',
+  });
+
+  const handleChange = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    localStorage.setItem('formData', JSON.stringify(formData));
+
+    const response = await fetch('/api/register', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(formData),
+    });
+
+    if (response.ok) {
+      history.push(`/merci/${formData.first_name}`);
+    }
+  };
+
+  return (
+    <div>
+      <h1>Inscription</h1>
+      <form onSubmit={handleSubmit}>
+        <div className="mb-3">
+          <label className="form-label">Prénom</label>
+          <input
+            type="text"
+            className="form-control"
+            name="first_name"
+            value={formData.first_name}
+            onChange={handleChange}
+          />
+        </div>
+        <!-- Autres champs de formulaire -->
+        <button type="submit" className="btn btn-primary">Enregistrer</button>
+      </form>
+    </div>
+  );
+};
+
+export default Inscription;
+```
+
+Quel hook React est utilisé pour gérer l'état du formulaire ?
+- A. `useEffect`
+- B. `useState`
+- C. `useReducer`
+- D. `useContext`
+
+#### Question 3: JWT
+
+Complétez le code pour générer un JWT lors de l'enregistrement d'un utilisateur :
 
 ```javascript
-app.use((err, req, res, next) => {
-  res.status(err.status || 500).send({
-    message: err.message || 'Une erreur interne est survenue.',
-    details: err
-  });
+const express = require('express');
+const bodyParser = require('body-parser');
+const jwt = require('jsonwebtoken');
+const app = express();
+const users = [];
+
+const JWT_SECRET = 'your_jwt_secret';
+
+app.use(bodyParser.json());
+
+app.post('/api/register', (req, res) => {
+  const { first_name, last_name, email, phone_number, street_address, post_code, country } = req.body;
+  const user = { first_name, last_name, email, phone_number, street_address, post_code, country };
+  users.push(user);
+  const token = jwt.sign({ email: user.email }, JWT_SECRET, { expiresIn: '1h' });
+  res.status(201).json({ message: 'User registered successfully', token });
 });
+
+const PORT = process.env.PORT || 5000;
+app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
 ```
 
-- Ce middleware intercepte toutes les erreurs non gérées sur les routes précédentes et les gère de manière uniforme.
+Que fait la fonction `jwt.sign()` ?
+- A. Elle vérifie la validité du token
+- B. Elle signe les données utilisateur avec une clé secrète pour générer un JWT
+- C. Elle enregistre les données utilisateur dans la base de données
+- D. Elle crypte les données utilisateur
 
+#### Question 4: React Router
 
+Complétez le code pour configurer les routes dans un composant React :
+
+```jsx
+import React from 'react';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Inscription from './Inscription';
+import Merci from './Merci';
+
+function App() {
+  return (
+    <Router>
+      <div className="container mt-5">
+        <Switch>
+          <Route path="/inscription" component={Inscription} />
+          <Route path="/merci/:name" component={Merci} />
+          <Route exact path="/" component={Inscription} />
+        </Switch>
+      </div>
+    </Router>
+  );
+}
+
+export default App;
+```
+
+Quel composant de `react-router-dom` est utilisé pour définir les routes dans l'application ?
+- A. `Link`
+- B. `Route`
+- C. `Switch`
+- D. `NavLink`
+
+#### Question 5: Utilisation de localStorage
+
+Complétez le code pour stocker les données du formulaire dans le localStorage :
+
+```javascript
+const handleSubmit = async (e) => {
+  e.preventDefault();
+  localStorage.setItem('formData', JSON.stringify(formData));
+
+  const response = await fetch('/api/register', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(formData),
+  });
+
+  if (response.ok) {
+    history.push(`/merci/${formData.first_name}`);
+  }
+};
+```
+
+Quel est le but de `localStorage.setItem('formData', JSON.stringify(formData));` ?
+- A. Envoyer les données du formulaire au backend
+- B. Stocker les données du formulaire dans le localStorage du navigateur
+- C. Afficher les données du formulaire à l'écran
+- D. Valider les données du formulaire
+
+---
+
+Ce quiz couvre les concepts de Node.js, npm, Express, JWT, React, useState, React Router et localStorage, tout en étant basé sur l'énoncé du projet donné.
